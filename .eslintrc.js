@@ -5,7 +5,7 @@ module.exports = {
     projectFolderIgnoreList: ["node_modules", "public"]
   },
   rules: {
-      "@typescript-eslint/naming-convention": "off"
+      "@typescript-eslint/naming-convention": "off",
       "import/no-extraneous-dependencies": "off"
   }
 };
