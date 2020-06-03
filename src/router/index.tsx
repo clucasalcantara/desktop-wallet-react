@@ -1,6 +1,7 @@
 import { Demo } from '../domains';
 
-export default Array < Object > [
+/* eslint-disable import/prefer-default-export */
+export const routes: Array<Object> = [
   {
     path: '/',
     exact: true,
