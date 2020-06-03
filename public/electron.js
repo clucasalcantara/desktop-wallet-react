@@ -1,28 +1,23 @@
-const electron = require('electron');
-const path = require('path');
-const isDev = require('electron-is-dev');
+const electron = require("electron");
+const path = require("path");
+const isDev = require("electron-is-dev");
 const winState = require("electron-window-state");
 
-const { BrowserWindow, app, screen, ipcMain } = electron
+const { BrowserWindow, app, screen, ipcMain } = electron;
 
 let mainWindow;
 let windowState = null;
 let deeplinkingUrl = null;
 
-const winURL = isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`;
+const winURL = isDev ? "http://localhost:3000" : `file://${path.join(__dirname, "../build/index.html")}`;
 
 const installExtensions = async () => {
-  const installer = require('electron-devtools-installer')
-  const forceDownload = !!process.env.UPGRADE_EXTENSIONS
-  const extensions = [
-    'REACT_DEVELOPER_TOOLS',
-  ]
+	const installer = require("electron-devtools-installer");
+	const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
+	const extensions = ["REACT_DEVELOPER_TOOLS"];
 
-  return Promise
-    .all(extensions.map(name => installer.default(installer[name], forceDownload)))
-    .catch(console.log)
-}
-
+	return Promise.all(extensions.map((name) => installer.default(installer[name], forceDownload))).catch(console.log);
+};
 
 function broadcastURL(url) {
 	if (!url || typeof url !== "string") {
@@ -52,7 +47,6 @@ ipcMain.on("disable-iframe-protection", function (_event, urls) {
 		});
 	});
 });
-
 
 function createWindow() {
 	const { width, height } = screen.getPrimaryDisplay().workAreaSize;
@@ -94,26 +88,14 @@ function createWindow() {
 		broadcastURL(deeplinkingUrl);
 	});
 
-  if (isDev) {
-    installExtensions()
-      .then(() => mainWindow.webContents.openDevTools())
-      .catch((error) => console.error(error))
-  }
+	if (isDev) {
+		installExtensions()
+			.then(() => mainWindow.webContents.openDevTools())
+			.catch((error) => console.error(error));
+	}
 }
 
-app.on('ready', createWindow);
-
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
-app.on('activate', () => {
-  if (mainWindow === null) {
-    createWindow();
-  }
-});
+app.on("ready", createWindow);
 
 app.on("window-all-closed", () => {
 	if (process.platform !== "darwin") {
@@ -121,6 +103,17 @@ app.on("window-all-closed", () => {
 	}
 });
 
+app.on("activate", () => {
+	if (mainWindow === null) {
+		createWindow();
+	}
+});
+
+app.on("window-all-closed", () => {
+	if (process.platform !== "darwin") {
+		app.quit();
+	}
+});
 
 app.on("open-url", (event, url) => {
 	// Protocol handler for osx

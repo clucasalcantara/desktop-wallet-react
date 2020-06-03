@@ -1,166 +1,165 @@
 {
- "name": "ark-desktop-wallet",
- "version": "0.1.0",
- "private": true,
- "homepage": "./",
- "main": "public/electron.js",
- "dependencies": {
-  "@testing-library/jest-dom": "^4.2.4",
-  "@testing-library/react": "^9.3.2",
-  "@testing-library/user-event": "^7.1.2",
-  "@types/jest": "^24.0.0",
-  "@types/node": "^12.0.0",
-  "@types/react": "^16.9.0",
-  "@types/react-dom": "^16.9.0",
-  "@types/react-router-config": "^5.0.1",
-  "@types/react-router-dom": "^5.1.5",
-  "autoprefixer": "^9.8.0",
-  "electron-is-dev": "^1.2.0",
-  "electron-notarize": "^0.3.0",
-  "electron-root-path": "^1.0.16",
-  "electron-window-state": "^5.0.3",
-  "eslint-config-airbnb-typescript": "^8.0.0",
-  "eslint-config-react-app": "^5.2.1",
-  "postcss": "^7.0.32",
-  "postcss-cli": "^7.1.1",
-  "react": "^16.13.1",
-  "react-dom": "^16.13.1",
-  "react-intl": "^4.6.4",
-  "react-router-config": "^5.1.1",
-  "react-router-dom": "^5.2.0",
-  "react-scripts": "3.4.1",
-  "typescript": "~3.7.2"
- },
- "scripts": {
-  "dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-  "tailwind:css": "tailwind build src/styles/tailwind.css -c tailwind.config.js -o src/styles/index.css",
-  "build": "npm run tailwind:css && react-scripts build",
-  "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-  "storybook": "start-storybook -p 5000",
-  "start": "react-scripts start",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "build:mac": "yarn build && electron-builder --mac --publish never"
- },
- "eslintConfig": {
-  "extends": "react-app"
- },
- "browserslist": {
-  "production": [
-   ">0.2%",
-   "not dead",
-   "not op_mini all"
-  ],
-  "development": [
-   "last 1 chrome version",
-   "last 1 firefox version",
-   "last 1 safari version"
-  ]
- },
- "devDependencies": {
-  "@storybook/addon-actions": "^5.3.19",
-  "@storybook/addon-knobs": "^5.3.19",
-  "@storybook/addons": "^5.3.19",
-  "@storybook/preset-create-react-app": "^3.0.0",
-  "@storybook/react": "^5.3.19",
-  "@tailwindcss/ui": "^0.3.0",
-  "@typescript-eslint/eslint-plugin": "^3.1.0",
-  "@typescript-eslint/parser": "^3.1.0",
-  "babel-loader": "^8.1.0",
-  "concurrently": "^5.2.0",
-  "electron": "^9.0.2",
-  "electron-builder": "^22.7.0",
-  "electron-devtools-installer": "^3.0.0",
-  "eslint-config-prettier": "^6.11.0",
-  "eslint-plugin-import": "^2.20.2",
-  "eslint-plugin-jsx-a11y": "^6.2.3",
-  "eslint-plugin-prettier": "^3.1.3",
-  "eslint-plugin-react": "^7.20.0",
-  "husky": "^4.2.5",
-  "lint-staged": "^10.2.7",
-  "postcss-import": "^12.0.1",
-  "prettier": "^2.0.5",
-  "react-docgen-typescript-loader": "^3.7.2",
-  "storybook-addon-intl": "^2.4.1",
-  "tailwindcss": "^1.4.6",
-  "wait-on": "^5.0.0"
- },
- "husky": {
-  "hooks": {
-   "pre-commit": "lint-staged"
-  }
- },
- "lint-staged": {
-  "*/**/*.{js,ts,tsx}": [
-   "eslint --fix"
-  ]
- },
- "build": {
-  "productName": "ARK Desktop Wallet",
-  "appId": "io.ark.desktop-wallet",
-  "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
-  "npmRebuild": false,
-  "publish": {
-   "provider": "github",
-   "vPrefixedTagName": false
-  },
-  "extraResources": [
-   "app-update.yml"
-  ],
-  "protocols": {
-   "name": "ARK URI scheme",
-   "schemes": [
-    "ark"
-   ],
-   "role": "Viewer"
-  },
-  "directories": {
-   "output": "dist/target"
-  },
-  "mac": {
-   "category": "public.app-category.finance",
-   "icon": "resources/assets/icons/icon.icns",
-   "hardenedRuntime": true,
-   "gatekeeperAssess": false,
-   "asarUnpack": [
-    "**/*.node"
-   ]
-  },
-  "win": {
-   "target": "nsis",
-   "icon": "resources/assets/icons/icon.ico"
-  },
-  "linux": {
-   "category": "Utility",
-   "icon": "resources/assets/icons",
-   "target": [
-    "AppImage",
-    "deb",
-    "tar.gz",
-    "snap"
-   ],
-   "desktop": {
-    "MimeType": "x-scheme-handler/ark;"
-   }
-  },
-  "deb": {
-   "depends": [
-    "gconf2",
-    "gconf-service",
-    "libnotify4",
-    "libappindicator1",
-    "libxtst6",
-    "libnss3",
-    "libudev-dev"
-   ]
-  },
-  "dmg": {
-   "icon": "resources/assets/icons/icon.icns"
-  },
-  "nsis": {
-   "perMachine": true,
-   "oneClick": false,
-   "allowToChangeInstallationDirectory": true
-  }
- }
+	"name": "ark-desktop-wallet",
+	"version": "0.1.0",
+	"private": true,
+	"homepage": "./",
+	"main": "public/electron.js",
+	"dependencies": {
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.3.2",
+		"@testing-library/user-event": "^7.1.2",
+		"@types/jest": "^24.0.0",
+		"@types/node": "^12.0.0",
+		"@types/react": "^16.9.0",
+		"@types/react-dom": "^16.9.0",
+		"@types/react-router-config": "^5.0.1",
+		"@types/react-router-dom": "^5.1.5",
+		"autoprefixer": "^9.8.0",
+		"electron-is-dev": "^1.2.0",
+		"electron-notarize": "^0.3.0",
+		"electron-root-path": "^1.0.16",
+		"electron-window-state": "^5.0.3",
+		"eslint-config-react-app": "^5.2.1",
+		"postcss": "^7.0.32",
+		"postcss-cli": "^7.1.1",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-intl": "^4.6.4",
+		"react-router-config": "^5.1.1",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "3.4.1",
+		"storybook-addon-intl": "^2.4.1",
+		"typescript": "~3.7.2"
+	},
+	"scripts": {
+		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+		"tailwind:css": "tailwind build src/styles/tailwind.css -c tailwind.config.js -o src/styles/index.css",
+		"build": "npm run tailwind:css && react-scripts build",
+		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+		"storybook": "start-storybook -p 5000",
+		"start": "react-scripts start",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"build:mac": "yarn build && electron-builder --mac --publish never"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@storybook/addon-actions": "^5.3.19",
+		"@storybook/addon-knobs": "^5.3.19",
+		"@storybook/addons": "^5.3.19",
+		"@storybook/preset-create-react-app": "^3.0.0",
+		"@storybook/react": "^5.3.19",
+		"@tailwindcss/ui": "^0.3.0",
+		"@typescript-eslint/eslint-plugin": "^3.1.0",
+		"@typescript-eslint/parser": "^3.1.0",
+		"babel-loader": "^8.1.0",
+		"concurrently": "^5.2.0",
+		"electron": "^9.0.2",
+		"electron-builder": "^22.7.0",
+		"electron-devtools-installer": "^3.0.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-prettier": "^3.1.3",
+		"eslint-plugin-react": "^7.20.0",
+		"husky": "^4.2.5",
+		"lint-staged": "^10.2.7",
+		"postcss-import": "^12.0.1",
+		"prettier": "^2.0.5",
+		"react-docgen-typescript-loader": "^3.7.2",
+		"tailwindcss": "^1.4.6",
+		"wait-on": "^5.0.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*/**/*.{js,ts,tsx}": [
+			"eslint --fix"
+		]
+	},
+	"build": {
+		"productName": "ARK Desktop Wallet",
+		"appId": "io.ark.desktop-wallet",
+		"artifactName": "${name}-${os}-${arch}-${version}.${ext}",
+		"npmRebuild": false,
+		"publish": {
+			"provider": "github",
+			"vPrefixedTagName": false
+		},
+		"extraResources": [
+			"app-update.yml"
+		],
+		"protocols": {
+			"name": "ARK URI scheme",
+			"schemes": [
+				"ark"
+			],
+			"role": "Viewer"
+		},
+		"directories": {
+			"output": "dist/target"
+		},
+		"mac": {
+			"category": "public.app-category.finance",
+			"icon": "resources/assets/icons/icon.icns",
+			"hardenedRuntime": true,
+			"gatekeeperAssess": false,
+			"asarUnpack": [
+				"**/*.node"
+			]
+		},
+		"win": {
+			"target": "nsis",
+			"icon": "resources/assets/icons/icon.ico"
+		},
+		"linux": {
+			"category": "Utility",
+			"icon": "resources/assets/icons",
+			"target": [
+				"AppImage",
+				"deb",
+				"tar.gz",
+				"snap"
+			],
+			"desktop": {
+				"MimeType": "x-scheme-handler/ark;"
+			}
+		},
+		"deb": {
+			"depends": [
+				"gconf2",
+				"gconf-service",
+				"libnotify4",
+				"libappindicator1",
+				"libxtst6",
+				"libnss3",
+				"libudev-dev"
+			]
+		},
+		"dmg": {
+			"icon": "resources/assets/icons/icon.icns"
+		},
+		"nsis": {
+			"perMachine": true,
+			"oneClick": false,
+			"allowToChangeInstallationDirectory": true
+		}
+	}
 }

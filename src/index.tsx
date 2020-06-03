@@ -6,9 +6,9 @@ import { IntlProvider } from 'react-intl';
 // i18n
 import translations from './i18n/locales';
 // Routes
-import { routes } from './router';
+import { routes } from "./router";
 // Styles
-import './styles/index.css';
+import "./styles/index.css";
 
 const locale = 'en-US';
 
