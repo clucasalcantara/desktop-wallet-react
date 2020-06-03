@@ -36,7 +36,7 @@ const StyledButton = styled.button.attrs(({ size, color, variant }) => {
         }
     }
 
-    return { class: `${baseClass} ${appliedClass}` }
+    return { className: `${baseClass} ${appliedClass}` }
 })`
     ${({ size }) => {
         switch(size) {
