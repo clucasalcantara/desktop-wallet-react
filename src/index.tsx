@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from "react-router-config";
 // Routes
 import { routes } from './router';
+// Styles
+import './styles/index.css';
 
 // No PWA stuff for now
 // import * as serviceWorker from './serviceWorker';
