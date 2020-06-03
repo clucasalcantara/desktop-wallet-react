@@ -1,9 +1,9 @@
 import { Demo } from '../domains';
 
-export const routes: Array<Object> = [
-    {
-        path: "/",
-        exact: true,
-        component: Demo
-    },
+export default Array < Object > [
+  {
+    path: '/',
+    exact: true,
+    component: Demo,
+  },
 ];

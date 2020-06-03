@@ -1,10 +1,8 @@
-import React from "react";
-import Demo from './';
+import React from 'react';
+import Demo from '.';
 
 export default {
-  title: "Demo Component",
+  title: 'Demo Component',
 };
 
-export const Default = () => (
-    <Demo />
-);
+export const Component = () => <Demo />;

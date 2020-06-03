@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Demo from './';
+import Demo from '.';
 
 test('renders hello world', () => {
   const { getByText } = render(<Demo />);
