@@ -58,6 +58,7 @@
   ]
  },
  "devDependencies": {
+  "@storybook/addon-actions": "^5.3.19",
   "@storybook/addon-knobs": "^5.3.19",
   "@storybook/addons": "^5.3.19",
   "@storybook/preset-create-react-app": "^3.0.0",
@@ -80,6 +81,7 @@
   "postcss-import": "^12.0.1",
   "prettier": "^2.0.5",
   "react-docgen-typescript-loader": "^3.7.2",
+  "storybook-addon-intl": "^2.4.1",
   "tailwindcss": "^1.4.6",
   "wait-on": "^5.0.0"
  },
