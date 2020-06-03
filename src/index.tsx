@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 // Routes
 import { routes } from './router';
@@ -8,9 +8,9 @@ import { routes } from './router';
 import './styles/index.css';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     { renderRoutes(routes) }
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root'),
 );
 
