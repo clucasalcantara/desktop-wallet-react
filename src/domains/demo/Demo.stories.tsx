@@ -5,4 +5,4 @@ export default {
 	title: "Demo Component",
 };
 
-export const Component = () => <Demo />;
+export const Default = () => <Demo />;
