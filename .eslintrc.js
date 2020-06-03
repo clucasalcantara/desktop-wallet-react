@@ -6,5 +6,6 @@ module.exports = {
   },
   rules: {
       "@typescript-eslint/naming-convention": "off"
+      "import/no-extraneous-dependencies": "off"
   }
 };
