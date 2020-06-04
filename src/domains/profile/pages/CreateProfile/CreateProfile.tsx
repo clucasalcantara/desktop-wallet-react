@@ -24,7 +24,7 @@ const item = {
 					type="button"
 					className="flex items-center justify-center w-20 h-20 bg-theme-primary-alpha bg-opacity-10 rounded-full"
 				>
-					<SvgIcon className="text-theme-primary" name="upload" />
+					<SvgIcon name="upload" />
 				</button>
 			</div>
 			{/* <!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") --> */}
