@@ -4,18 +4,16 @@ import { getStyles } from "./style";
 
 type Props = {
 	title: string;
-	children: React.ReactNode;
+	children: any;
 	status: string;
-	variant?: "solid" | "plain" | "outline";
 	size?: "small" | "default" | "large";
 };
 
-const Wrapper = styled.div<Props>(getStyles);
+const Wrapper = styled.div(getStyles);
 
-const Alert = ({ title, status, variant, size, children }: Props) => (
+const Alert = ({ title, status, size, children }: Props) => (
 	<div className={`flex rounded-lg overflow-hidden bg-theme-${status}`}>
 		<Wrapper
-			variant={variant}
 			size={size}
 			className={`w-24 flex items-center justify-center text-theme-${status}-shade bg-theme-${status}-tint`}
 		>
@@ -26,7 +24,7 @@ const Alert = ({ title, status, variant, size, children }: Props) => (
 				/>
 			</svg>
 		</Wrapper>
-		<Wrapper variant={variant} className="flex-1 bg-theme-background opacity-50 p-8">
+		<Wrapper className="flex-1 bg-theme-background opacity-50 p-8">
 			<div className="flex flex-col justify-center">
 				{title && <p className={`text-xl font-bold text-theme-${status}`}>{title}</p>}
 				{children}
