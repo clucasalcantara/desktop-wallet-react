@@ -1,5 +1,5 @@
 import React from 'react';
-import { addDecorator } from '@storybook/react';
+import { addDecorator, addParameters } from '@storybook/react';
 import { setIntlConfig, withIntl } from 'storybook-addon-intl'
 // Preview layout
 import Layout from './Layout';
@@ -13,6 +13,12 @@ setIntlConfig({
   defaultLocale: 'en-US',
   getMessages
 })
+
+addParameters({
+	options: {
+		showRoots: true,
+	},
+});
 
 addDecorator(withIntl)
 addDecorator(storyFn => <Layout>{storyFn()}</Layout>);
