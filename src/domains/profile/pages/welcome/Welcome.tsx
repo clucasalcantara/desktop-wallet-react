@@ -30,7 +30,7 @@ const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 					<img src={profileAssets.OnboardingBanner} />
 				</div>
 
-				{profiles.length && (
+				{profiles.length > 0 && (
 					<div className="container mx-auto">
 						<div className="w-full my-8">
 							<h1 className="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">Select Profile</h1>
