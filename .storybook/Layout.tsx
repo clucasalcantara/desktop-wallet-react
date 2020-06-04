@@ -1,17 +1,9 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import "../src/styles/index.css";
 
-const theme = {
-	colors: {
-		black: "#000",
-	},
-};
+import "../src/styles/app.css";
 
 const Layout = ({ children }) => (
-	<ThemeProvider theme={theme}>
-		<div className="p-5 w-full h-full">{children}</div>
-	</ThemeProvider>
+	<div className="p-5 w-full h-full">{children}</div>
 );
 
 export default Layout;

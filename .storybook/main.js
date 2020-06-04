@@ -1,3 +1,5 @@
+const configOverrides = require("../config-overrides");
+
 module.exports = {
 	stories: ["../src/**/**/*.stories.tsx"],
 	addons: [
@@ -5,9 +7,11 @@ module.exports = {
 		"@storybook/addon-knobs/register",
 		"@storybook/preset-create-react-app",
 	],
-	webpackFinal: async (config) => {
-		(config.module.rules = [
-			...config.module.rules,
+	webpackFinal: async (storybookConfig) => {
+		const customConfig = configOverrides(storybookConfig);
+
+		(storybookConfig.module.rules = [
+			...storybookConfig.module.rules,
 			{
 				test: /\.(ts|tsx)$/,
 				use: [
@@ -21,7 +25,12 @@ module.exports = {
 				],
 			},
 		]),
-			config.resolve.extensions.push(".ts", ".tsx");
-		return config;
+
+		storybookConfig.resolve.extensions.push(".ts", ".tsx");
+
+		return {
+			...storybookConfig,
+			module: { ...storybookConfig.module, rules: customConfig.module.rules },
+		};
 	},
 };

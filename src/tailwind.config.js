@@ -4,6 +4,7 @@ const defaultConfig = require("tailwindcss/defaultConfig");
 const tailwindUI = require("@tailwindcss/ui");
 
 module.exports = {
+	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.vue", "./src/renderer/**/*.jsx"],
 	theme: {
 		extend: {
 			inset: {
@@ -27,9 +28,43 @@ module.exports = {
 				"-64": "-16rem",
 			},
 			colors: {
-				"theme-page-text": "var(--theme-page-text)",
-				"theme-page-text-light": "var(--theme-page-text-light)",
-				"theme-line-separator": "var(--theme-line-separator)",
+				"theme-background": "var(--theme-background-color)",
+				"theme-text": "var(--theme-text-color)",
+
+				"theme-primary": "var(--theme-color-primary)",
+				"theme-primary-contrast": "var(--theme-color-primary-contrast)",
+				"theme-primary-shade": "var(--theme-color-primary-shade)",
+				"theme-primary-tint": "var(--theme-color-primary-tint)",
+
+				"theme-success": "var(--theme-color-success)",
+				"theme-success-contrast": "var(--theme-color-success-contrast)",
+				"theme-success-shade": "var(--theme-color-success-shade)",
+				"theme-success-tint": "var(--theme-color-success-tint)",
+
+				"theme-warning": "var(--theme-color-warning)",
+				"theme-warning-contrast": "var(--theme-color-warning-contrast)",
+				"theme-warning-shade": "var(--theme-color-warning-shade)",
+				"theme-warning-tint": "var(--theme-color-warning-tint)",
+
+				"theme-danger": "var(--theme-color-danger)",
+				"theme-danger-contrast": "var(--theme-color-danger-contrast)",
+				"theme-danger-shade": "var(--theme-color-danger-shade)",
+				"theme-danger-tint": "var(--theme-color-danger-tint)",
+
+				"theme-dark": "var(--theme-color-dark)",
+				"theme-dark-contrast": "var(--theme-color-dark-contrast)",
+				"theme-dark-shade": "var(--theme-color-dark-shade)",
+				"theme-dark-tint": "var(--theme-color-dark-tint)",
+
+				"theme-medium": "var(--theme-color-medium)",
+				"theme-medium-contrast": "var(--theme-color-medium-contrast)",
+				"theme-medium-shade": "var(--theme-color-medium-shade)",
+				"theme-medium-tint": "var(--theme-color-medium-tint)",
+
+				"theme-light": "var(--theme-color-light)",
+				"theme-light-contrast": "var(--theme-color-light-contrast)",
+				"theme-light-shade": "var(--theme-color-light-shade)",
+				"theme-light-tint": "var(--theme-color-light-tint)",
 
 				black: "#1e212b",
 
