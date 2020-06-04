@@ -37,6 +37,7 @@ module.exports = {
 		"@typescript-eslint/no-unsafe-return": "off",
 		"@typescript-eslint/prefer-regexp-exec": "off",
 		"@typescript-eslint/restrict-template-expressions": "off",
+		"@typescript-eslint/no-non-null-assertion": "off",
 		"prettier/prettier": [
 			"off",
 			{
