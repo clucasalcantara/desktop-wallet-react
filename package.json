@@ -30,6 +30,7 @@
 		"react-scripts": "3.4.1",
 		"storybook-addon-intl": "^2.4.1",
 		"styled-components": "^5.1.1",
+		"twin.macro": "^1.3.0",
 		"typescript": "~3.7.2"
 	},
 	"scripts": {
@@ -42,6 +43,13 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"build:mac": "yarn build && electron-builder --mac --publish never"
+	},
+	"babelMacros": {
+		"twin": {
+			"preset": "styled-components",
+			"config": "src/tailwind.config.js",
+			"autoCssProp": true
+		}
 	},
 	"eslintConfig": {
 		"extends": "react-app"
@@ -65,6 +73,7 @@
 		"@storybook/preset-create-react-app": "^3.0.0",
 		"@storybook/react": "^5.3.19",
 		"@tailwindcss/ui": "^0.3.0",
+		"@types/styled-components": "^5.1.0",
 		"@typescript-eslint/eslint-plugin": "^3.1.0",
 		"@typescript-eslint/parser": "^3.1.0",
 		"babel-loader": "^8.1.0",
