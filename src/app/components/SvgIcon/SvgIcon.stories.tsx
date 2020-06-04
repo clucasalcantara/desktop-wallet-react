@@ -1,5 +1,5 @@
 import React from "react";
-import { SvgIcon } from ".";
+import { SvgIcon } from "./";
 
 export default {
 	title: "Components / SvgIcon",

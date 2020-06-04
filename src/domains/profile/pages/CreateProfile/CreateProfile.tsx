@@ -30,7 +30,7 @@ const item = {
 			{/* <!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") --> */}
 			<div className="relative w-24 h-24 bg-theme-light rounded">
 				<img src="https://randomuser.me/api/portraits/men/3.jpg" className="object-cover rounded" />
-				<button className="absolute flex items-center justify-center w-6 h-6 p-1 bg-red-100 rounded -top-3 -right-3">
+				<button className="absolute flex items-center justify-center w-6 h-6 p-1 bg-theme-danger-alpha text-theme-danger bg-opacity-15 rounded -top-3 -right-3">
 					<SvgIcon name="close" height={12} width={12} />
 				</button>
 			</div>
