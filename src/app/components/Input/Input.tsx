@@ -11,7 +11,7 @@ const Input = ({ type, label, name }: Props) => (
 		<label className="mb-2 text-theme-medium">
 			{label}
 			<div className="flex relative items-center">
-				<input className="flex-1 border border-theme-light rounded-md h-12 w-full" type={type} name={name} />
+				<input className="flex-1 border border-theme-neutral-light rounded-md h-12 w-full" type={type} name={name} />
 				{/* {innerSlot && 
                 <button v-if="icon" className="absolute right-0 mr-4 h-12 text-blue-600">
                     <SvgIcon :name="icon" view-box="0 0 20 20" />
