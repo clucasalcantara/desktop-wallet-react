@@ -1,6 +1,7 @@
-const defaultConfig = require("tailwindcss/defaultConfig");
+import defaultConfig from "tailwindcss/defaultConfig";
+import tailwindUI from "@tailwindcss/ui";
 
-module.exports = {
+export default {
 	theme: {
 		extend: {
 			inset: {
@@ -169,5 +170,5 @@ module.exports = {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
 		borderWidth: [...defaultConfig.variants.borderWidth, "last"],
 	},
-	plugins: [require("@tailwindcss/ui")],
+	plugins: [tailwindUI],
 };

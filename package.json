@@ -35,7 +35,7 @@
 	},
 	"scripts": {
 		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-		"tailwind:css": "tailwind build src/styles/tailwind.css -c tailwind.config.js -o src/styles/index.css",
+		"tailwind:css": "tailwind build src/styles/tailwind.css -c src/tailwind.config.js -o src/styles/index.css",
 		"build": "npm run tailwind:css && react-scripts build",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
 		"storybook": "start-storybook -p 5000",
