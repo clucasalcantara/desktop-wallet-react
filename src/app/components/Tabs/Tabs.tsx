@@ -44,24 +44,24 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 Tab.displayName = "Tab";
 
 export const TabList = styled.div`
-    ${tw`inline-flex justify-start items-stretch rounded bg-gray-200 px-3`}
+    ${tw`inline-flex justify-start items-stretch rounded bg-theme-light-tint px-3`}
 
     & > ${TabButton} {
-        ${tw`px-5 py-4 border-b-3 font-semibold text-gray-800 text-opacity-75 relative transition-colors ease-in-out duration-300`}
+        ${tw`px-5 py-4 border-b-3 font-semibold text-theme-medium relative transition-colors ease-in-out duration-300`}
 
         &[aria-selected="true"] {
-            ${tw`border-blue-600 text-opacity-100`}
+            ${tw`border-theme-primary text-theme-dark`}
         }
 
         &:hover,
 		&:focus {
-			${tw`outline-none text-opacity-100`};
+			${tw`outline-none text-theme-dark`};
         }
 
         & + ${TabButton}:after {
             content: "";
             width: 1px;
-            ${tw`h-4 bg-gray-300 absolute left-0 top-1/2 transform -translate-y-1/2 block`};
+            ${tw`h-4 bg-theme-light absolute left-0 top-1/2 transform -translate-y-1/2 block`};
         }
     }
 `;

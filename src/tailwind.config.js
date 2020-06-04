@@ -3,10 +3,37 @@
 const defaultConfig = require("tailwindcss/defaultConfig");
 const tailwindUI = require("@tailwindcss/ui");
 
+const alphaThemePlugin = () => {
+	const variants = ["primary", "success", "danger", "light", "dark"];
+	const props = ["bg", "text", "border"];
+	const attrs = ["background-color", "color", "border-color"];
+
+	return variants.reduce((result, variant) => {
+		const value = props.reduce((acc, prop, index) => {
+			const key = `.${prop}-theme-${variant}-alpha`;
+			const data = {
+				[`${attrs[index]}`]: `rgba(var(--theme-color-${variant}-rgb), var(--${prop}-opacity))`,
+			};
+
+			return {
+				...acc,
+				[key]: data,
+			};
+		}, {});
+		return { ...result, ...value };
+	}, {});
+}
+
 module.exports = {
 	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.vue", "./src/renderer/**/*.jsx"],
 	theme: {
 		extend: {
+			opacity: {
+				"10": "0.1",
+				"15": "0.15",
+				"85": "0.85",
+				"90": "0.9",
+			},
 			inset: {
 				full: "100%",
 				"-1": "-0.25rem",
@@ -207,5 +234,13 @@ module.exports = {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
 		borderWidth: [...defaultConfig.variants.borderWidth, "last"],
 	},
-	plugins: [tailwindUI],
+	plugins: [
+		tailwindUI,
+		function ({ addUtilities }) {
+			alphaThemePlugin();
+			// console.log(utilities);
+
+			addUtilities(alphaThemePlugin());
+		},
+	],
 };

@@ -1,66 +1,69 @@
 import tw, { css } from "twin.macro";
-// @ts-ignore
-import resolveConfig from 'tailwindcss/resolveConfig';
-import tailwindConfig from '../../../tailwind.config';
 
-const { theme } = resolveConfig(tailwindConfig)
+const baseStyle = [
+	tw`rounded focus:outline-none focus:shadow-outline font-semibold text-center transition-all ease-linear duration-100`,
+	css`
+		&:disabled {
+			${tw`cursor-not-allowed bg-theme-light-tint text-theme-light-shade`}
+		}
+	`,
+];
 
-const baseStyle = tw`rounded py-3 px-4 focus:outline-none focus:shadow-outline font-semibold text-center transition-all ease-linear duration-100`;
-
-const colors = {
-	primary: css`
-		--color: ${theme.colors.blue['600']};
-		--color-shade: ${theme.colors.blue['700']};
-		--color-tint: ${theme.colors.blue['500']};
-		--color-contrast: ${theme.colors.blue['100']};
-		--color-shadow: ${theme.colors.blue['200']};
-	`,
-	success: css`
-		--color: ${theme.colors.green['600']};
-		--color-shade: ${theme.colors.green['700']};
-		--color-tint: ${theme.colors.green['500']};
-		--color-contrast: ${theme.colors.green['200']};
-		--color-shadow: ${theme.colors.green['200']};
-	`,
-	danger: css`
-		--color: ${theme.colors.red['500']};
-		--color-shade: ${theme.colors.red['600']};
-		--color-tint: ${theme.colors.red['400']};
-		--color-contrast: ${theme.colors.red['100']};
-		--color-shadow: ${theme.colors.red['100']};
-	`,
+const getColorsVariable = (name: string): any => {
+	return {
+		base: `var(--theme-color-${name})`,
+		rgb: `var(--theme-color-${name}-rgb)`,
+		shade: `var(--theme-color-${name}-shade)`,
+		tint: `var(--theme-color-${name}-tint)`,
+		contrast: `var(--theme-color-${name}-contrast)`,
+	};
 };
 
-const getVariant = (name: string) => {
+const getVariant = (name: string, color: ReturnType<typeof getColorsVariable>): any => {
 	switch (name) {
 		case "solid":
 			return css`
-				background-color: var(--color);
-				color: var(--color-contrast);
-				&:hover {
-					box-shadow: 2px 3px 10px 2px var(--color-shadow);
+				color: ${color.contrast};
+				background-color: ${color.base};
+				&:not(:focus):hover:enabled {
+					box-shadow: 2px 3px 10px 2px rgba(${color.rgb}, 0.2);
 				}
 			`;
 		case "plain":
 			return css`
-				color: var(--color-shade);
-				background-color: var(--color-contrast);
+				color: ${color.shade};
+				background-color: rgba(${color.rgb}, 0.1);
+				&:not(:focus):hover:enabled {
+					background-color: rgba(${color.rgb}, 0.15);
+				}
 			`;
 		case "outline":
 			return css`
-				color: var(--color-shade);
-				box-shadow: 0 0 0 2px var(--color-shadow);
+				color: ${color.shade};
+				border: 2px solid rgba(${color.rgb}, 0.2);
+				&:not(:focus):hover:enabled {
+					border-color: rgba(${color.rgb}, 0.35);
+				}
 			`;
 	}
 };
 
-export const getStyles = ({ variant, color }: { variant: string; color: string }) => {
+const getSize = (size: string): any => {
+	switch (size) {
+		case "small":
+			return tw`text-sm px-2 py-1`;
+		case "default":
+			return tw`text-base px-4 py-2`;
+		case "large":
+			return tw`text-lg px-5 py-3`;
+	}
+};
+
+export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: string }) => {
 	return [
-		baseStyle,
-		// @ts-ignore
-		...colors[color],
-		// @ts-ignore
-		...getVariant(variant)
+		getSize(size!),
+		...baseStyle,
+		...getVariant(variant!, getColorsVariable(color!)),
 	];
 };
 
