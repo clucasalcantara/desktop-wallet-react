@@ -15,10 +15,10 @@ const commonAssets = imagesConfig.common;
 
 const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 	return (
-		<div className="w-full h-full bg-white">
+		<div className="w-full h-full">
 			<div className="px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center h-20 md:h-24">
-					<div className="flex p-2 rounded-lg bg-red-logo">
+					<div className="flex p-2 rounded-lg bg-logo">
 						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" />
 					</div>
 				</div>
@@ -34,7 +34,7 @@ const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 					<div className="container mx-auto">
 						<div className="w-full my-8">
 							<h1 className="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">Select Profile</h1>
-							<div className="mx-4 mt-2 text-gray-700 md:mx-8 xl:mx-16">
+							<div className="mx-4 mt-2 text-theme-medium md:mx-8 xl:mx-16">
 								You already have a profile, you can choose any of them
 							</div>
 						</div>
@@ -42,11 +42,11 @@ const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 						{profiles.map((profile) => (
 							<ProfileCard {...profile} key={profile.id} />
 						))}
-						<div className="max-w-lg mx-auto mt-10 border-t border-gray-300"></div>
+						<div className="max-w-lg mx-auto mt-10 border-t border-light-tint"></div>
 					</div>
 				)}
 
-				<div className="mx-4 mt-8 mb-4 text-gray-700 md:mx-8 xl:mx-16">
+				<div className="mx-4 mt-8 mb-4 text-theme-medium md:mx-8 xl:mx-16">
 					Create a new Profile or login with your MarketSquare account to get started
 				</div>
 				<div className="flex justify-center w-full mb-10">

@@ -27,6 +27,48 @@ const alphaThemePlugin = () => {
 module.exports = {
 	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.vue", "./src/renderer/**/*.jsx"],
 	theme: {
+		colors: {
+			"logo": "#c9292c",
+			"transparent": "transparent",
+	
+			"theme-background": "var(--theme-background-color)",
+			"theme-text": "var(--theme-text-color)",
+
+			"theme-primary": "var(--theme-color-primary)",
+			"theme-primary-contrast": "var(--theme-color-primary-contrast)",
+			"theme-primary-shade": "var(--theme-color-primary-shade)",
+			"theme-primary-tint": "var(--theme-color-primary-tint)",
+
+			"theme-success": "var(--theme-color-success)",
+			"theme-success-contrast": "var(--theme-color-success-contrast)",
+			"theme-success-shade": "var(--theme-color-success-shade)",
+			"theme-success-tint": "var(--theme-color-success-tint)",
+
+			"theme-warning": "var(--theme-color-warning)",
+			"theme-warning-contrast": "var(--theme-color-warning-contrast)",
+			"theme-warning-shade": "var(--theme-color-warning-shade)",
+			"theme-warning-tint": "var(--theme-color-warning-tint)",
+
+			"theme-danger": "var(--theme-color-danger)",
+			"theme-danger-contrast": "var(--theme-color-danger-contrast)",
+			"theme-danger-shade": "var(--theme-color-danger-shade)",
+			"theme-danger-tint": "var(--theme-color-danger-tint)",
+
+			"theme-dark": "var(--theme-color-dark)",
+			"theme-dark-contrast": "var(--theme-color-dark-contrast)",
+			"theme-dark-shade": "var(--theme-color-dark-shade)",
+			"theme-dark-tint": "var(--theme-color-dark-tint)",
+
+			"theme-medium": "var(--theme-color-medium)",
+			"theme-medium-contrast": "var(--theme-color-medium-contrast)",
+			"theme-medium-shade": "var(--theme-color-medium-shade)",
+			"theme-medium-tint": "var(--theme-color-medium-tint)",
+
+			"theme-light": "var(--theme-color-light)",
+			"theme-light-contrast": "var(--theme-color-light-contrast)",
+			"theme-light-shade": "var(--theme-color-light-shade)",
+			"theme-light-tint": "var(--theme-color-light-tint)",
+		},
 		extend: {
 			opacity: {
 				"10": "0.1",
@@ -53,108 +95,6 @@ module.exports = {
 				"-48": "-12rem",
 				"-56": "-14rem",
 				"-64": "-16rem",
-			},
-			colors: {
-				"theme-background": "var(--theme-background-color)",
-				"theme-text": "var(--theme-text-color)",
-
-				"theme-primary": "var(--theme-color-primary)",
-				"theme-primary-contrast": "var(--theme-color-primary-contrast)",
-				"theme-primary-shade": "var(--theme-color-primary-shade)",
-				"theme-primary-tint": "var(--theme-color-primary-tint)",
-
-				"theme-success": "var(--theme-color-success)",
-				"theme-success-contrast": "var(--theme-color-success-contrast)",
-				"theme-success-shade": "var(--theme-color-success-shade)",
-				"theme-success-tint": "var(--theme-color-success-tint)",
-
-				"theme-warning": "var(--theme-color-warning)",
-				"theme-warning-contrast": "var(--theme-color-warning-contrast)",
-				"theme-warning-shade": "var(--theme-color-warning-shade)",
-				"theme-warning-tint": "var(--theme-color-warning-tint)",
-
-				"theme-danger": "var(--theme-color-danger)",
-				"theme-danger-contrast": "var(--theme-color-danger-contrast)",
-				"theme-danger-shade": "var(--theme-color-danger-shade)",
-				"theme-danger-tint": "var(--theme-color-danger-tint)",
-
-				"theme-dark": "var(--theme-color-dark)",
-				"theme-dark-contrast": "var(--theme-color-dark-contrast)",
-				"theme-dark-shade": "var(--theme-color-dark-shade)",
-				"theme-dark-tint": "var(--theme-color-dark-tint)",
-
-				"theme-medium": "var(--theme-color-medium)",
-				"theme-medium-contrast": "var(--theme-color-medium-contrast)",
-				"theme-medium-shade": "var(--theme-color-medium-shade)",
-				"theme-medium-tint": "var(--theme-color-medium-tint)",
-
-				"theme-light": "var(--theme-color-light)",
-				"theme-light-contrast": "var(--theme-color-light-contrast)",
-				"theme-light-shade": "var(--theme-color-light-shade)",
-				"theme-light-tint": "var(--theme-color-light-tint)",
-
-				black: "#1e212b",
-
-				gray: {
-					"100": "#f7fafb",
-					"200": "#eef3f5",
-					"300": "#dbdee5",
-					"400": "#c4c8cf",
-					"500": "#a5adb9",
-					"600": "#7e8a9c",
-					"700": "#637282",
-					"800": "#3c4249",
-					"900": "#212225",
-				},
-
-				red: {
-					logo: "#e51317", // ARK logo
-					"100": "#ffe0da",
-					"200": "#feb8ae",
-					"300": "#ef7c6d",
-					"400": "#de5846",
-					"500": "#c9292c",
-					"600": "#b01e20",
-					"700": "#881a1b",
-					"800": "#5b1b1b",
-					"900": "#391919",
-				},
-
-				blue: {
-					"100": "#e5f0f8",
-					"200": "#bad6f0",
-					"300": "#99c7ee",
-					"400": "#77b9f3",
-					"500": "#3e9dff",
-					"600": "#007dff",
-					"700": "#075af2",
-					"800": "#0b4dc7",
-					"900": "#173e85",
-				},
-
-				yellow: {
-					"100": "#ffe6b8",
-					"200": "#ffd486",
-					"300": "#ffc359",
-					"400": "#feb933",
-					"500": "#ffae10",
-					"600": "#fc9f0f",
-					"700": "#f88e0d",
-					"800": "#f27c0b",
-					"900": "#ec5c08",
-				},
-
-				green: {
-					"100": "#f6fdf8",
-					"200": "#e2f0e6",
-					"300": "#b0dbbc",
-					"400": "#8cc69d",
-					"500": "#42b263",
-					"600": "#289548",
-					"700": "#307845",
-					"800": "#2b4f35",
-					"900": "#26372b",
-				},
 			},
 			minWidth: {
 				"200px": "200px",
@@ -198,33 +138,24 @@ module.exports = {
 			borderRadius: {
 				xl: "1rem",
 			},
-			boxShadow: {
-				"button-primary": "2px 3px 10px 2px rgba(9, 100, 228, 0.34)",
-				"button-secondary": "2px 3px 10px 2px rgba(9, 100, 228, 0.34)",
-				"header-smooth": " 0px 2px 10px 0px rgba(192, 200, 207, 0.22)",
-			},
 			fontFamily: {
 				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
-			},
-			fill: {
-				current: "currentColor",
-			},
-			stroke: {
-				current: "currentColor",
 			},
 		},
 
 		customForms: (theme) => ({
 			default: {
 				select: {
-					icon: (iconColor) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 16 15">
-                    <path fill="${iconColor}" d="M3.9 5.4L.7 1.9C.4 1.6.4 1.1.7.8s.7-.3 1 0l2.8 2.9L7.2.8c.3-.3.7-.3 1 0s.3.8 0 1.1L5 5.4c-.3.3-.7.3-1.1 0h0z"/>
-                </svg>`,
+					icon: (iconColor) => `
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 16 15">
+                    		<path fill="${iconColor}" d="M3.9 5.4L.7 1.9C.4 1.6.4 1.1.7.8s.7-.3 1 0l2.8 2.9L7.2.8c.3-.3.7-.3 1 0s.3.8 0 1.1L5 5.4c-.3.3-.7.3-1.1 0h0z"/>
+						</svg>
+					`,
 
-					iconColor: theme("colors.gray-700"),
+					iconColor: theme("colors.theme-medium"),
 
 					"&:hover": {
-						iconColor: theme("colors.gray-600"),
+						iconColor: theme("colors.theme-medium-tint"),
 					},
 				},
 			},
@@ -236,11 +167,6 @@ module.exports = {
 	},
 	plugins: [
 		tailwindUI,
-		function ({ addUtilities }) {
-			alphaThemePlugin();
-			// console.log(utilities);
-
-			addUtilities(alphaThemePlugin());
-		},
+		({ addUtilities }) => addUtilities(alphaThemePlugin()),
 	],
 };

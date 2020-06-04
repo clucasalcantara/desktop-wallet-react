@@ -47,7 +47,7 @@ export const TabList = styled.div`
     ${tw`inline-flex justify-start items-stretch rounded bg-theme-light-tint px-3`}
 
     & > ${TabButton} {
-        ${tw`px-5 py-4 border-b-3 font-semibold text-theme-medium relative transition-colors ease-in-out duration-300`}
+        ${tw`px-5 py-4 border-b-3 border-theme-light font-semibold text-theme-medium relative transition-colors ease-in-out duration-300`}
 
         &[aria-selected="true"] {
             ${tw`border-theme-primary text-theme-dark`}
@@ -61,7 +61,7 @@ export const TabList = styled.div`
         & + ${TabButton}:after {
             content: "";
             width: 1px;
-            ${tw`h-4 bg-theme-light absolute left-0 top-1/2 transform -translate-y-1/2 block`};
+            ${tw`h-4 bg-theme-light-alpha bg-opacity-50 absolute left-0 top-1/2 transform -translate-y-1/2 block`};
         }
     }
 `;
