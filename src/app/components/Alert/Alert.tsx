@@ -2,20 +2,20 @@ import React from "react";
 import { styled } from "twin.macro";
 import { getStyles } from "./style";
 
-type Props = {
-	title: string;
-	children: any;
-	status: string;
+type AlertProps = {
+	children: React.ReactNode;
+	title?: string;
+	variant?: "primary" | "success" | "danger" | "warning" | "neutral";
 	size?: "small" | "default" | "large";
 };
 
 const Wrapper = styled.div(getStyles);
 
-const Alert = ({ title, status, size, children }: Props) => (
-	<div className={`flex rounded-lg overflow-hidden bg-theme-${status}`}>
+const Alert = ({ variant, title, size, children }: AlertProps) => (
+	<div className={`flex rounded-lg overflow-hidden bg-theme-${variant}`}>
 		<Wrapper
 			size={size}
-			className={`w-24 flex items-center justify-center text-theme-${status}-shade bg-theme-${status}-tint`}
+			className={`w-24 flex items-center justify-center text-theme-${variant} bg-theme-${variant}-200`}
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className="w-8 h-8">
 				<path
@@ -24,9 +24,9 @@ const Alert = ({ title, status, size, children }: Props) => (
 				/>
 			</svg>
 		</Wrapper>
-		<Wrapper className="flex-1 bg-theme-background opacity-50 p-8">
+		<Wrapper className={`flex-1 bg-theme-${variant}-100 pl-5`}>
 			<div className="flex flex-col justify-center">
-				{title && <p className={`text-xl font-bold text-theme-${status}`}>{title}</p>}
+				{title && <p className={`text-xl font-bold text-theme-${variant}`}>{title}</p>}
 				{children}
 			</div>
 		</Wrapper>
@@ -35,10 +35,8 @@ const Alert = ({ title, status, size, children }: Props) => (
 
 Alert.defaultProps = {
 	title: "Alert",
-	children: <span>Alert content</span>,
-	variant: "solid",
-	size: "default",
-	status: "success",
+	variant: "warning",
+	size: "default"
 };
 
 export default Alert;

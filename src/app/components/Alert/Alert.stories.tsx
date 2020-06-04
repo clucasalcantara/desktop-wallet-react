@@ -8,10 +8,10 @@ export default {
 };
 
 const editableProps = {
-	title: text("Title", "Alert Title"),
+	title: text("Title", "Title"),
 	children: text("Content", "Content"),
 	size: select(
-		"Alert size",
+		"Size",
 		{
 			Small: "small",
 			Default: "default",
@@ -20,8 +20,9 @@ const editableProps = {
 		"default",
 	),
 	status: select(
-		"Alert status",
+		"Variant",
 		{
+			Primary: "primary",
 			Warning: "warning",
 			Success: "success",
 			Danger: "danger",
@@ -31,7 +32,5 @@ const editableProps = {
 };
 
 export const Default = () => (
-	<div className="p-4">
-		<Alert {...editableProps} />
-	</div>
+	<Alert {...editableProps} />
 );
