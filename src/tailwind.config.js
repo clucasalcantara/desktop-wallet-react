@@ -1,7 +1,9 @@
-import defaultConfig from "tailwindcss/defaultConfig";
-import tailwindUI from "@tailwindcss/ui";
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
+const defaultConfig = require("tailwindcss/defaultConfig");
+const tailwindUI = require("@tailwindcss/ui");
 
-export default {
+module.exports = {
 	theme: {
 		extend: {
 			inset: {
