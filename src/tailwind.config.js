@@ -22,15 +22,14 @@ const alphaThemePlugin = () => {
 		}, {});
 		return { ...result, ...value };
 	}, {});
-}
+};
 
 module.exports = {
-	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.vue", "./src/renderer/**/*.jsx"],
 	theme: {
 		colors: {
-			"logo": "#c9292c",
-			"transparent": "transparent",
-	
+			logo: "#c9292c",
+			transparent: "transparent",
+
 			"theme-background": "var(--theme-background-color)",
 			"theme-text": "var(--theme-text-color)",
 
@@ -165,8 +164,5 @@ module.exports = {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
 		borderWidth: [...defaultConfig.variants.borderWidth, "last"],
 	},
-	plugins: [
-		tailwindUI,
-		({ addUtilities }) => addUtilities(alphaThemePlugin()),
-	],
+	plugins: [tailwindUI, ({ addUtilities }) => addUtilities(alphaThemePlugin())],
 };
