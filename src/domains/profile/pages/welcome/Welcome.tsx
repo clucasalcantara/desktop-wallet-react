@@ -1,6 +1,5 @@
 import React from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
-import { withTheme } from "styled-components";
 //TODO: Deal with relative paths
 import { imagesConfig } from "../../../../resources/assets/images";
 // UI Elements
@@ -63,4 +62,8 @@ const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 	);
 };
 
-export default injectIntl(withTheme(Welcome));
+Welcome.defaultProps = {
+	profiles: [],
+};
+
+export default injectIntl(Welcome);
