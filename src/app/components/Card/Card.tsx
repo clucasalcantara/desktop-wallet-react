@@ -7,5 +7,5 @@ type CardProps = {
 };
 
 export const Card = styled.div<CardProps>`
-	${tw`p-6 border-2 border-theme-primary-alpha border-opacity-15 rounded-md text-theme-medium`}
+	${tw`p-6 border-2 border-theme-primary-contrast rounded-md`}
 `;

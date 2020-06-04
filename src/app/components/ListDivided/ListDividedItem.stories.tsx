@@ -9,16 +9,16 @@ const item = {
 	isFloatingLabel: true,
 	label: "New Profile",
 	labelDescription: "Select Profile Image",
-	itemLabelClass: "text-2xl font-semibold text-theme-dark",
-	itemLabelDescriptionClass: "text-sm font-semibold text-theme-medium",
+	itemLabelClass: "text-2xl font-semibold text-theme-neutral-dark",
+	itemLabelDescriptionClass: "text-sm font-semibold text-neutral-dark",
 	labelClass: "",
 	value: "",
 	itemValueClass: "",
 	content: (
 		<div className="flex flex-row mt-2">
-			<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-light border-dashed rounded"></div>
+			<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-neutral border-dashed rounded"></div>
 			{/* <!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") --> */}
-			<div className="relative w-24 h-24 bg-theme-light rounded">
+			<div className="relative w-24 h-24 bg-theme-neutral rounded">
 				<img src="https://randomuser.me/api/portraits/men/3.jpg" className="object-cover rounded" />
 			</div>
 		</div>

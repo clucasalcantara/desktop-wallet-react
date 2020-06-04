@@ -34,7 +34,7 @@ const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 					<div className="container mx-auto">
 						<div className="w-full my-8">
 							<h1 className="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">Select Profile</h1>
-							<div className="mx-4 mt-2 text-theme-medium md:mx-8 xl:mx-16">
+							<div className="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16">
 								You already have a profile, you can choose any of them
 							</div>
 						</div>
@@ -42,11 +42,11 @@ const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 						{profiles.map((profile) => (
 							<ProfileCard {...profile} key={profile.id} />
 						))}
-						<div className="max-w-lg mx-auto mt-10 border-t border-light-tint"></div>
+						<div className="max-w-lg mx-auto mt-10 border-t border-neutral-light"></div>
 					</div>
 				)}
 
-				<div className="mx-4 mt-8 mb-4 text-theme-medium md:mx-8 xl:mx-16">
+				<div className="mx-4 mt-8 mb-4 text-theme-neutral-dark md:mx-8 xl:mx-16">
 					Create a new Profile or login with your MarketSquare account to get started
 				</div>
 				<div className="flex justify-center w-full mb-10">

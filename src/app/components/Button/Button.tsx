@@ -3,7 +3,7 @@ import { styled } from "twin.macro";
 import { getStyles } from "./style";
 
 type ButtonProps = {
-	color?: "primary" | "success" | "danger" | "warning" | "light" | "dark";
+	color?: "primary" | "success" | "danger" | "warning" | "neutral";
 	variant?: "solid" | "plain" | "outline";
 	size?: "small" | "default" | "large";
 } & React.ButtonHTMLAttributes<any>;

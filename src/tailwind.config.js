@@ -4,7 +4,7 @@ const defaultConfig = require("tailwindcss/defaultConfig");
 const tailwindUI = require("@tailwindcss/ui");
 
 const alphaThemePlugin = () => {
-	const variants = ["primary", "success", "danger", "light", "dark"];
+	const variants = ["primary", "success", "danger", "warning", "neutral"];
 	const props = ["bg", "text", "border"];
 	const attrs = ["background-color", "color", "border-color"];
 
@@ -35,38 +35,73 @@ module.exports = {
 
 			"theme-primary": "var(--theme-color-primary)",
 			"theme-primary-contrast": "var(--theme-color-primary-contrast)",
-			"theme-primary-shade": "var(--theme-color-primary-shade)",
-			"theme-primary-tint": "var(--theme-color-primary-tint)",
+			"theme-primary-dark": "var(--theme-color-primary-contrast)",
+			"theme-primary-light": "var(--theme-color-primary-contrast)",
+			"theme-primary-100": "var(--theme-color-primary-100)",
+			"theme-primary-200": "var(--theme-color-primary-200)",
+			"theme-primary-300": "var(--theme-color-primary-300)",
+			"theme-primary-400": "var(--theme-color-primary-400)",
+			"theme-primary-500": "var(--theme-color-primary-500)",
+			"theme-primary-600": "var(--theme-color-primary-600)",
+			"theme-primary-700": "var(--theme-color-primary-700)",
+			"theme-primary-800": "var(--theme-color-primary-800)",
+			"theme-primary-900": "var(--theme-color-primary-900)",
 
 			"theme-success": "var(--theme-color-success)",
 			"theme-success-contrast": "var(--theme-color-success-contrast)",
-			"theme-success-shade": "var(--theme-color-success-shade)",
-			"theme-success-tint": "var(--theme-color-success-tint)",
+			"theme-success-dark": "var(--theme-color-success-dark)",
+			"theme-success-light": "var(--theme-color-success-light)",
+			"theme-success-100": "var(--theme-color-success-100)",
+			"theme-success-200": "var(--theme-color-success-200)",
+			"theme-success-300": "var(--theme-color-success-300)",
+			"theme-success-400": "var(--theme-color-success-400)",
+			"theme-success-500": "var(--theme-color-success-500)",
+			"theme-success-600": "var(--theme-color-success-600)",
+			"theme-success-700": "var(--theme-color-success-700)",
+			"theme-success-800": "var(--theme-color-success-800)",
+			"theme-success-900": "var(--theme-color-success-900)",
 
 			"theme-warning": "var(--theme-color-warning)",
 			"theme-warning-contrast": "var(--theme-color-warning-contrast)",
-			"theme-warning-shade": "var(--theme-color-warning-shade)",
-			"theme-warning-tint": "var(--theme-color-warning-tint)",
+			"theme-warning-dark": "var(--theme-color-warning-dark)",
+			"theme-warning-light": "var(--theme-color-warning-light)",
+			"theme-warning-100": "var(--theme-color-warning-100)",
+			"theme-warning-200": "var(--theme-color-warning-200)",
+			"theme-warning-300": "var(--theme-color-warning-300)",
+			"theme-warning-400": "var(--theme-color-warning-400)",
+			"theme-warning-500": "var(--theme-color-warning-500)",
+			"theme-warning-600": "var(--theme-color-warning-600)",
+			"theme-warning-700": "var(--theme-color-warning-700)",
+			"theme-warning-800": "var(--theme-color-warning-800)",
+			"theme-warning-900": "var(--theme-color-warning-900)",
 
 			"theme-danger": "var(--theme-color-danger)",
 			"theme-danger-contrast": "var(--theme-color-danger-contrast)",
-			"theme-danger-shade": "var(--theme-color-danger-shade)",
-			"theme-danger-tint": "var(--theme-color-danger-tint)",
-
-			"theme-dark": "var(--theme-color-dark)",
-			"theme-dark-contrast": "var(--theme-color-dark-contrast)",
-			"theme-dark-shade": "var(--theme-color-dark-shade)",
-			"theme-dark-tint": "var(--theme-color-dark-tint)",
-
-			"theme-medium": "var(--theme-color-medium)",
-			"theme-medium-contrast": "var(--theme-color-medium-contrast)",
-			"theme-medium-shade": "var(--theme-color-medium-shade)",
-			"theme-medium-tint": "var(--theme-color-medium-tint)",
-
-			"theme-light": "var(--theme-color-light)",
-			"theme-light-contrast": "var(--theme-color-light-contrast)",
-			"theme-light-shade": "var(--theme-color-light-shade)",
-			"theme-light-tint": "var(--theme-color-light-tint)",
+			"theme-danger-dark": "var(--theme-color-danger-dark)",
+			"theme-danger-light": "var(--theme-color-danger-light)",
+			"theme-danger-100": "var(--theme-color-danger-100)",
+			"theme-danger-200": "var(--theme-color-danger-200)",
+			"theme-danger-300": "var(--theme-color-danger-300)",
+			"theme-danger-400": "var(--theme-color-danger-400)",
+			"theme-danger-500": "var(--theme-color-danger-500)",
+			"theme-danger-600": "var(--theme-color-danger-600)",
+			"theme-danger-700": "var(--theme-color-danger-700)",
+			"theme-danger-800": "var(--theme-color-danger-800)",
+			"theme-danger-900": "var(--theme-color-danger-900)",
+			
+			"theme-neutral": "var(--theme-color-neutral)",
+			"theme-neutral-contrast": "var(--theme-color-neutral-contrast)",
+			"theme-neutral-dark": "var(--theme-color-neutral-dark)",
+			"theme-neutral-light": "var(--theme-color-neutral-light)",
+			"theme-neutral-100": "var(--theme-color-neutral-100)",
+			"theme-neutral-200": "var(--theme-color-neutral-200)",
+			"theme-neutral-300": "var(--theme-color-neutral-300)",
+			"theme-neutral-400": "var(--theme-color-neutral-400)",
+			"theme-neutral-500": "var(--theme-color-neutral-500)",
+			"theme-neutral-600": "var(--theme-color-neutral-600)",
+			"theme-neutral-700": "var(--theme-color-neutral-700)",
+			"theme-neutral-800": "var(--theme-color-neutral-800)",
+			"theme-neutral-900": "var(--theme-color-neutral-900)",
 		},
 		extend: {
 			opacity: {
@@ -155,7 +190,7 @@ module.exports = {
 					iconColor: theme("colors.theme-medium"),
 
 					"&:hover": {
-						iconColor: theme("colors.theme-medium-tint"),
+						iconColor: theme("colors.theme-medium-light"),
 					},
 				},
 			},

@@ -4,7 +4,7 @@ const baseStyle = [
 	tw`rounded focus:outline-none focus:shadow-outline font-semibold text-center transition-all ease-linear duration-100`,
 	css`
 		&:disabled {
-			${tw`cursor-not-allowed bg-theme-light-tint text-theme-light-shade`}
+			${tw`cursor-not-allowed bg-theme-neutral-light text-theme-neutral`}
 		}
 	`,
 ];
@@ -12,10 +12,10 @@ const baseStyle = [
 const getColorsVariable = (name: string): any => {
 	return {
 		base: `var(--theme-color-${name})`,
-		rgb: `var(--theme-color-${name}-rgb)`,
-		shade: `var(--theme-color-${name}-shade)`,
-		tint: `var(--theme-color-${name}-tint)`,
 		contrast: `var(--theme-color-${name}-contrast)`,
+		rgb: `var(--theme-color-${name}-rgb)`,
+		dark: `var(--theme-color-${name}-dark)`,
+		light: `var(--theme-color-${name}-light)`,
 	};
 };
 
@@ -31,18 +31,18 @@ const getVariant = (name: string, color: ReturnType<typeof getColorsVariable>): 
 			`;
 		case "plain":
 			return css`
-				color: ${color.shade};
-				background-color: rgba(${color.rgb}, 0.1);
+				color: ${color.base};
+				background-color: ${color.contrast};
 				&:not(:focus):hover:enabled {
-					background-color: rgba(${color.rgb}, 0.15);
+					background-color: ${color.light};
 				}
 			`;
 		case "outline":
 			return css`
-				color: ${color.shade};
-				border: 2px solid rgba(${color.rgb}, 0.2);
+				color: ${color.base};
+				border: 2px solid ${color.contrast};
 				&:not(:focus):hover:enabled {
-					border-color: rgba(${color.rgb}, 0.35);
+					border-color: ${color.light};
 				}
 			`;
 	}

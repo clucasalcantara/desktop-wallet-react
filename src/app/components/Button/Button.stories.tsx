@@ -47,30 +47,17 @@ export const Danger = () => (
 	</div>
 );
 
-export const Light = () => (
+export const Neutral = () => (
 	<div className="inline-flex space-x-4">
-		<Button color="light" variant="solid">
+		<Button color="neutral" variant="solid">
 			Solid
 		</Button>
-		<Button color="light" variant="plain">
+		<Button color="neutral" variant="plain">
 			Plain
 		</Button>
-		<Button color="light" variant="outline">
+		<Button color="neutral" variant="outline">
 			Outline
 		</Button>
 	</div>
 );
 
-export const Dark = () => (
-	<div className="inline-flex space-x-4">
-		<Button color="dark" variant="solid">
-			Solid
-		</Button>
-		<Button color="dark" variant="plain">
-			Plain
-		</Button>
-		<Button color="dark" variant="outline">
-			Outline
-		</Button>
-	</div>
-);

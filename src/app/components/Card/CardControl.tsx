@@ -19,14 +19,14 @@ const Input = styled.input`
 const CustomCard = styled(Card)`
 	${tw`transition-colors duration-200`}
 	${Input}:checked + & {
-		${tw`bg-theme-success-alpha bg-opacity-10 border-theme-success-tint`}
+		${tw`bg-theme-success-contrast border-theme-success`}
 	}
 `;
 
 const StateStyle = styled.div`
-    ${tw`rounded-full w-4 h-4 border-2 inline-flex items-center justify-center text-transparent`}
+    ${tw`rounded-full w-4 h-4 border-2 border-theme-primary-contrast inline-flex items-center justify-center text-transparent`}
     ${Input}:checked + ${CustomCard} & {
-        ${tw`bg-theme-success-tint border-transparent text-theme-success-contrast`}
+        ${tw`bg-theme-success border-transparent text-theme-success-contrast`}
     }
 `;
 

@@ -21,14 +21,14 @@ export const ProfileCard = ({ avatar, name, balance }: Props) => (
 						<img className="rounded-full" src={avatar} />
 					</div>
 					<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
-						<p className="text-sm font-semibold text-theme-light-shade">Name</p>
-						<p className="font-semibold text-theme-dark">{name}</p>
+						<p className="text-sm font-semibold text-theme-neutral">Name</p>
+						<p className="font-semibold text-theme-neutral-dark">{name}</p>
 					</div>
 				</div>
 				<div className="flex items-center">
 					<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right">
-						<p className="text-sm font-semibold text-theme-light-shade">Total Balance</p>
-						<p className="font-semibold text-theme-dark">{balance}</p>
+						<p className="text-sm font-semibold text-theme-neutral">Total Balance</p>
+						<p className="font-semibold text-theme-neutral-dark">{balance}</p>
 					</div>
 				</div>
 			</div>
