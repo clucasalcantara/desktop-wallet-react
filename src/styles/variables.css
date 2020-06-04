@@ -1,0 +1,53 @@
+:root {
+	--theme-background-color: #ffffff;
+	--theme-text-color: #212225;
+
+	--theme-color-primary: #007dff;
+	--theme-color-primary-rgb: 0, 125, 255;
+	--theme-color-primary-contrast: #ffffff;
+	--theme-color-primary-contrast-rgb: 255, 255, 255;
+	--theme-color-primary-shade: #075af2;
+	--theme-color-primary-tint: #3e9dff;
+
+	--theme-color-success: #289548;
+	--theme-color-success-rgb: 40, 149, 72;
+	--theme-color-success-contrast: #ffffff;
+	--theme-color-success-contrast-rgb: 255, 255, 255;
+	--theme-color-success-shade: #307845;
+	--theme-color-success-tint: #42b263;
+
+	--theme-color-warning: #ffae10;
+	--theme-color-warning-rgb: 255, 174, 16;
+	--theme-color-warning-contrast: #000000;
+	--theme-color-warning-contrast-rgb: 0, 0, 0;
+	--theme-color-warning-shade: #fc9f0f;
+	--theme-color-warning-tint: #ffc359;
+
+	--theme-color-danger: #c9292c;
+	--theme-color-danger-rgb: 201, 41, 44;
+	--theme-color-danger-contrast: #ffffff;
+	--theme-color-danger-contrast-rgb: 255, 255, 255;
+	--theme-color-danger-shade: #b01e20;
+	--theme-color-danger-tint: #de5846;
+
+	--theme-color-dark: #212225;
+	--theme-color-dark-rgb: 33, 34, 37;
+	--theme-color-dark-contrast: #ffffff;
+	--theme-color-dark-contrast-rgb: 255, 255, 255;
+	--theme-color-dark-shade: #121213;
+	--theme-color-dark-tint: #3c4249;
+
+	--theme-color-medium: #637282;
+	--theme-color-medium-rgb: 99, 114, 130;
+	--theme-color-medium-contrast: #ffffff;
+	--theme-color-medium-contrast-rgb: 255, 255, 255;
+	--theme-color-medium-shade: #3c4249;
+	--theme-color-medium-tint: #7e8a9c;
+
+	--theme-color-light: #c4c8cf;
+	--theme-color-light-rgb: 196, 200, 207;
+	--theme-color-light-contrast: #000000;
+	--theme-color-light-contrast-rgb: 0, 0, 0;
+	--theme-color-light-shade: #a5adb9;
+	--theme-color-light-tint: #eef3f5;
+}

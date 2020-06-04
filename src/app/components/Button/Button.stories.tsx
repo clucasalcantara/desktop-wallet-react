@@ -13,6 +13,9 @@ export const Primary = () => (
 		<Button color="primary" variant="plain">
 			Plain
 		</Button>
+		<Button color="primary" variant="outline">
+			Outline
+		</Button>
 	</div>
 );
 
@@ -24,6 +27,9 @@ export const Success = () => (
 		<Button color="success" variant="plain">
 			Plain
 		</Button>
+		<Button color="success" variant="outline">
+			Outline
+		</Button>
 	</div>
 );
 
@@ -34,6 +40,37 @@ export const Danger = () => (
 		</Button>
 		<Button color="danger" variant="plain">
 			Plain
+		</Button>
+		<Button color="danger" variant="outline">
+			Outline
+		</Button>
+	</div>
+);
+
+export const Light = () => (
+	<div className="inline-flex space-x-4">
+		<Button color="light" variant="solid">
+			Solid
+		</Button>
+		<Button color="light" variant="plain">
+			Plain
+		</Button>
+		<Button color="light" variant="outline">
+			Outline
+		</Button>
+	</div>
+);
+
+export const Dark = () => (
+	<div className="inline-flex space-x-4">
+		<Button color="dark" variant="solid">
+			Solid
+		</Button>
+		<Button color="dark" variant="plain">
+			Plain
+		</Button>
+		<Button color="dark" variant="outline">
+			Outline
 		</Button>
 	</div>
 );

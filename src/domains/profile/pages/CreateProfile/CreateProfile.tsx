@@ -15,17 +15,20 @@ const item = {
 	isFloatingLabel: true,
 	label: "New Profile",
 	labelDescription: "Select Profile Image",
-	itemLabelClass: "text-2xl font-semibold text-black",
-	itemLabelDescriptionClass: "text-sm font-semibold text-gray-700",
+	itemLabelClass: "text-2xl font-semibold text-theme-dark",
+	itemLabelDescriptionClass: "text-sm font-semibold text-theme-medium",
 	content: (
 		<div className="flex flex-row mt-2">
 			<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-gray-300 border-dashed rounded">
-				<button type="button" className="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full">
-					<SvgIcon name="upload" />
+				<button
+					type="button"
+					className="flex items-center justify-center w-20 h-20 bg-theme-primary-alpha bg-opacity-10 rounded-full"
+				>
+					<SvgIcon className="text-theme-primary" name="upload" />
 				</button>
 			</div>
 			{/* <!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") --> */}
-			<div className="relative w-24 h-24 bg-gray-400 rounded">
+			<div className="relative w-24 h-24 bg-theme-light rounded">
 				<img src="https://randomuser.me/api/portraits/men/3.jpg" className="object-cover rounded" />
 				<button className="absolute flex items-center justify-center w-6 h-6 p-1 bg-red-100 rounded -top-3 -right-3">
 					<SvgIcon name="close" height={12} width={12} />
@@ -40,7 +43,7 @@ const CreateProfile = ({ intl: { formatMessage } }: Props) => {
 		<div className="w-full h-full bg-white">
 			<div className="px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center h-20 md:h-24">
-					<div className="flex p-2 rounded-lg bg-red-logo">
+					<div className="flex p-2 rounded-lg bg-logo">
 						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" />
 					</div>
 				</div>
@@ -49,7 +52,7 @@ const CreateProfile = ({ intl: { formatMessage } }: Props) => {
 			<div className="container mx-auto">
 				<div className="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">
 					<h1 className="mx-4 text-2xl font-bold md:text-4xl md:mx-8 xl:mx-16">Create Profile</h1>
-					<div className="mx-4 mt-2 text-gray-700 md:mx-8 xl:mx-16">
+					<div className="mx-4 mt-2 text-theme-medium md:mx-8 xl:mx-16">
 						Create a new Profile or login with your MarketSquare account to get started.
 					</div>
 
@@ -57,7 +60,7 @@ const CreateProfile = ({ intl: { formatMessage } }: Props) => {
 						<Button color="primary" variant="solid" className="w-full">
 							Login with MarketSquare
 						</Button>
-						<div className="pt-4 mt-8 border-t border-gray-300"></div>
+						<div className="pt-4 mt-8 border-t border-theme-light"></div>
 					</div>
 				</div>
 			</div>

@@ -7,9 +7,9 @@ type StepIndicatorProps = {
 };
 
 const StepStyled = styled.li<{ isActive: boolean }>`
-	${tw`flex-1 bg-gray-200 rounded-lg transition-colors duration-300`}
+	${tw`flex-1 bg-theme-light-tint rounded-lg transition-colors duration-300`}
 	height: 2px;
-	${({ isActive }) => isActive && tw`bg-yellow-600`}
+	${({ isActive }) => isActive && tw`bg-theme-warning`}
 `;
 
 export const StepIndicator: React.FC<StepIndicatorProps> = (props: StepIndicatorProps) => {

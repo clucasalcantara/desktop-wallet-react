@@ -21,13 +21,13 @@ export const ListDividedItem = ({
 	itemValueClass,
 	content,
 }: Props) => (
-	<li className="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
+	<li className="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-light">
 		<div className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"}`}>
 			<div className="flex flex-col ListDividedItem__container__label">
 				<span className={`mr-5 ListDividedItem__label ${labelClass}`}>{label}</span>
 				{labelDescription && (
 					<span
-						className={`text-sm text-gray-500 ListDividedItem__label__description ${itemLabelDescriptionClass}`}
+						className={`text-sm text-theme-light-shade ListDividedItem__label__description ${itemLabelDescriptionClass}`}
 					>
 						{labelDescription}
 					</span>
