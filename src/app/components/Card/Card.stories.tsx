@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "./Card";
 import { CardControl, CardControlState } from "./CardControl";
 
-export default { title: "Card" };
+export default { title: "Components / Card" };
 
 export const Default = () => <Card className="inline-flex">ARK Ecosystem</Card>;
 export const Control = () => (
