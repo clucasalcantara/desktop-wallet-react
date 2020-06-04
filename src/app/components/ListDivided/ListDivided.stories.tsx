@@ -1,5 +1,5 @@
 import React from "react";
-import { ListDivided } from "./ListDivided";
+import { ListDivided } from ".";
 
 export default {
 	title: "Components / List Divided / List Divided",

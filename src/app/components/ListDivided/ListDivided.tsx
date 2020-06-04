@@ -1,14 +1,14 @@
 import React from "react";
 // UI Elements
-import { ListDividedItem } from "./ListDividedItem.jsx";
+import { ListDividedItem } from "./ListDividedItem";
 
 type Props = {
-	items: Array<any>;
+	items: any;
 };
 
-const renderItems = (items) => (
+const renderItems = (items: any) => (
 	<ul>
-		{items.map((item, index) => (
+		{items.map((item: any, index: number) => (
 			<ListDividedItem {...item} key={index} />
 		))}
 	</ul>

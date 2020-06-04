@@ -21,7 +21,7 @@ const item = {
 		<div className="flex flex-row mt-2">
 			<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-gray-300 border-dashed rounded">
 				<button type="button" className="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full">
-					<SvgIcon className="text-blue-600" name="upload" />
+					<SvgIcon name="upload" />
 				</button>
 			</div>
 			{/* <!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") --> */}

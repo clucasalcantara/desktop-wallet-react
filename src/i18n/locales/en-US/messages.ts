@@ -45,10 +45,6 @@ export default {
 	COMMON_SKIP: "Skip",
 	COMMON_START: "Start",
 	COMMON_THEME: "Theme",
-	COMMON_THEMES: {
-		COMMON_LIGHT: "Default: Light",
-		COMMON_DARK: "Default: Dark",
-	},
 	COMMON_TIME_FORMAT: "Time format",
 	COMMON_URL: "URL",
 	COMMON_VERIFIED_ADDRESS: "This is a verified address",

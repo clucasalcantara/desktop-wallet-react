@@ -1,9 +1,3 @@
-import { Demo } from "../domains";
+import ProfileRoutes from "../domains/profile/routing";
 
-export const routes: Array<Object> = [
-	{
-		path: "/",
-		exact: true,
-		component: Demo,
-	},
-];
+export const routes: Array<Object> = [...ProfileRoutes];

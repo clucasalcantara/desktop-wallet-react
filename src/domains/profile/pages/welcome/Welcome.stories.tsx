@@ -16,7 +16,7 @@ const profiles = [
 
 export const Default = () => (
 	<div className="w-full h-full">
-		<Welcome />
+		<Welcome profiles={[]} />
 	</div>
 );
 

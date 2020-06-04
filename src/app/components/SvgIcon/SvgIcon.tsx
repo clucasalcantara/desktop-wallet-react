@@ -2,7 +2,7 @@ import React from "react";
 import SVG from "react-inlinesvg";
 
 type Props = {
-	name: string.isRequired;
+	name: string;
 	width: number;
 	height: number;
 };

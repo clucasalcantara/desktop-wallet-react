@@ -10,8 +10,4 @@ const editableProps = {
 	avatar: text("User Avatar", "https://www.w3schools.com/howto/img_avatar.png"),
 };
 
-export const Default = () => (
-	<ProfileCard className="inline-flex" {...editableProps}>
-		ARK Ecosystem
-	</ProfileCard>
-);
+export const Default = () => <ProfileCard {...editableProps} />;
