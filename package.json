@@ -128,7 +128,7 @@
 		},
 		"mac": {
 			"category": "public.app-category.finance",
-			"icon": "resources/assets/icons/icon.icns",
+			"icon": "src/resources/assets/icons/icon.icns",
 			"hardenedRuntime": true,
 			"gatekeeperAssess": false,
 			"asarUnpack": [
@@ -137,11 +137,11 @@
 		},
 		"win": {
 			"target": "nsis",
-			"icon": "resources/assets/icons/icon.ico"
+			"icon": "src/resources/assets/icons/icon.ico"
 		},
 		"linux": {
 			"category": "Utility",
-			"icon": "resources/assets/icons",
+			"icon": "src/resources/assets/icons",
 			"target": [
 				"AppImage",
 				"deb",
@@ -164,7 +164,7 @@
 			]
 		},
 		"dmg": {
-			"icon": "resources/assets/icons/icon.icns"
+			"icon": "src/resources/assets/icons/icon.icns"
 		},
 		"nsis": {
 			"perMachine": true,

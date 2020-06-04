@@ -1,5 +1,5 @@
-import locales from './locales';
+import locales from "./locales";
 
 export default {
-  'en-US': locales['en-US'].messages,
+	"en-US": locales["en-US"].messages,
 };

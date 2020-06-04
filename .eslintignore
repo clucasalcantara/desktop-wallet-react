@@ -1,4 +1,4 @@
 
 src/pwa/*
 public/
-resources/scripts
+src/resources/*
