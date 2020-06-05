@@ -24,6 +24,7 @@
 		"postcss-cli": "^7.1.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
+		"react-hook-form": "^5.7.2",
 		"react-inlinesvg": "^1.2.0",
 		"react-intl": "^4.6.4",
 		"react-router-config": "^5.1.1",
