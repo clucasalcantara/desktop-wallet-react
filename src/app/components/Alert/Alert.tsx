@@ -26,7 +26,11 @@ const Alert = ({ variant, title, size, children }: AlertProps) => (
 		</Wrapper>
 		<Wrapper className={`flex-1 bg-theme-${variant}-100 pl-5`}>
 			<div className="flex flex-col justify-center">
-				{title && <p className={`text-xl font-bold text-theme-${variant}`}>{title}</p>}
+				{title && (
+					<p className={`text-xl font-bold text-theme-${variant}`} data-testid="alert__title">
+						{title}
+					</p>
+				)}
 				{children}
 			</div>
 		</Wrapper>
@@ -36,7 +40,7 @@ const Alert = ({ variant, title, size, children }: AlertProps) => (
 Alert.defaultProps = {
 	title: "Alert",
 	variant: "warning",
-	size: "default"
+	size: "default",
 };
 
 export default Alert;

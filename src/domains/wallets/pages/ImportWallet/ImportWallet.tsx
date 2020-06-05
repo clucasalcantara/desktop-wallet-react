@@ -24,7 +24,7 @@ const ImportWallet = ({ networks }: Props) => {
 	const [activeIndex, setActiveIndex] = useState(1);
 	const [selected, setSelected] = useState(null);
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
-	const { register } = useForm();
+	const { register, errors } = useForm();
 
 	const renderImportInput = () => {
 		const innerSlot = (
@@ -34,10 +34,21 @@ const ImportWallet = ({ networks }: Props) => {
 		);
 
 		if (!isAddressOnly) {
-			return <Input type="text" label="Your password" ref={register} />;
+			return (
+				<Input type="text" label="Your password" name="password" ref={register} error={errors["password"]} />
+			);
 		}
 
-		return <Input type="text" label="Address" innerSlot={innerSlot} ref={register} />;
+		return (
+			<Input
+				type="text"
+				label="Address"
+				name="address"
+				innerSlot={innerSlot}
+				ref={register}
+				error={errors["address"]}
+			/>
+		);
 	};
 
 	const submitImportWallet = (data: any) => console.log(data);

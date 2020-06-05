@@ -15,8 +15,7 @@ const renderItems = (items: any) => (
 );
 
 const ListDivided = ({ items }: Props) => {
-	console.log(items);
-	const emptyList = <span>empty</span>;
+	const emptyList = <span data-testid="list-divided__empty">empty</span>;
 
 	return items.length ? renderItems(items) : emptyList;
 };

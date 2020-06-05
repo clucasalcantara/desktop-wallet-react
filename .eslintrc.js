@@ -8,7 +8,7 @@ module.exports = {
 		sourceType: "module",
 		projectFolderIgnoreList: ["node_modules", "public"],
 	},
-	plugins: ["@typescript-eslint", "prettier"],
+	plugins: ["@typescript-eslint", "prettier", "testing-library"],
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
@@ -17,6 +17,7 @@ module.exports = {
 		"plugin:prettier/recommended",
 		"plugin:react/recommended",
 		"prettier/@typescript-eslint",
+		"plugin:testing-library/react",
 	],
 	rules: {
 		"prefer-const": [

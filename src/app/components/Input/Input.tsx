@@ -11,8 +11,8 @@ type Props = {
 };
 
 const Input = ({ type, label, name, error, innerSlot }: Props) => (
-	<div className="flex flex-col">
-		<label className="text-theme-medium">
+	<div className="flex flex-col" data-testid="input__wrapper">
+		<label className="text-theme-medium" data-testid="input__label">
 			{label}
 			<div className="mt-2 pb-2 flex relative items-center">
 				<input
@@ -20,7 +20,11 @@ const Input = ({ type, label, name, error, innerSlot }: Props) => (
 					type={type}
 					name={name}
 				/>
-				{innerSlot && <div className="absolute right-0 mr-4 mt-1">{innerSlot}</div>}
+				{innerSlot && (
+					<div className="absolute right-0 mr-4 mt-1" data-testid="input__inner-slot">
+						{innerSlot}
+					</div>
+				)}
 			</div>
 		</label>
 		{error && <FormError error={error} />}
