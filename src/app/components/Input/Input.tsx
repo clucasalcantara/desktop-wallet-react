@@ -16,7 +16,7 @@ const Input = ({ type, label, name, error, innerSlot }: Props) => (
 			{label}
 			<div className="mt-2 pb-2 flex relative items-center">
 				<input
-					className="flex-1 border border-theme-neutral-light rounded-md h-12 w-full"
+					className="form-input transition-colors duration-200 w-full"
 					type={type}
 					name={name}
 				/>
