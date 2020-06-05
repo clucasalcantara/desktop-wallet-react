@@ -1,14 +1,14 @@
 import React from "react";
 
 type Props = {
-	isFloatingLabel: boolean,
-	labelClass: string,
-	label: string,
-	labelDescription: string,
-	itemLabelDescriptionClass: string,
-	value: string,
-	itemValueClass: string,
-	content: React.ReactNode,
+	isFloatingLabel: boolean;
+	labelClass: string;
+	label: string;
+	labelDescription: string;
+	itemLabelDescriptionClass: string;
+	value: string;
+	itemValueClass: string;
+	content: React.ReactNode;
 };
 
 export const ListDividedItem = ({
@@ -21,7 +21,7 @@ export const ListDividedItem = ({
 	itemValueClass,
 	content,
 }: Props) => (
-	<li className="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-neutral-light">
+	<li className="flex flex-col w-full py-4 ListDividedItem mb-5">
 		<div className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"}`}>
 			<div className="flex flex-col ListDividedItem__container__label">
 				<span className={`mr-5 ListDividedItem__label ${labelClass}`}>{label}</span>
