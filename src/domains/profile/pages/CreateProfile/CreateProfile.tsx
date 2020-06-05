@@ -38,7 +38,7 @@ const item = {
 	),
 };
 
-const CreateProfile = ({ intl: { formatMessage } }: Props) => {
+const CreateProfile = injectIntl(({ intl: { formatMessage } }: Props) => {
 	const submitProfile = (data: any) => console.log(data);
 	const { register, errors } = useForm();
 
@@ -82,6 +82,6 @@ const CreateProfile = ({ intl: { formatMessage } }: Props) => {
 			</div>
 		</div>
 	);
-};
+});
 
-export default injectIntl(CreateProfile);
+export { CreateProfile };

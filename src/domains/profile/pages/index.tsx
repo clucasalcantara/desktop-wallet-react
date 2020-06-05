@@ -1,4 +1,4 @@
-import Welcome from "./Welcome/Welcome";
-import CreateProfile from "./CreateProfile/CreateProfile";
+import { Welcome } from "./Welcome";
+import { CreateProfile } from "./CreateProfile";
 
 export { CreateProfile, Welcome };

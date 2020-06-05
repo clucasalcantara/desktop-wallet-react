@@ -13,7 +13,7 @@ type Props = {
 
 const profileAssets = imagesConfig.pages.profile;
 
-const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
+const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: Props) => {
 	return (
 		<div className="w-full h-full">
 			<NavBar />
@@ -25,7 +25,7 @@ const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 				</div>
 
 				{profiles.length > 0 && (
-					<div className="container mx-auto">
+					<div className="container w-2/5 mx-auto">
 						<div className="w-full my-8">
 							<h1 className="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">Select Profile</h1>
 							<div className="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16">
@@ -54,10 +54,10 @@ const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 			</div>
 		</div>
 	);
-};
+});
 
 Welcome.defaultProps = {
 	profiles: [],
 };
 
-export default injectIntl(Welcome);
+export { Welcome };

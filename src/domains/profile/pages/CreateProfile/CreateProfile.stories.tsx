@@ -1,5 +1,5 @@
 import React from "react";
-import CreateProfile from "./CreateProfile";
+import { CreateProfile } from "./CreateProfile";
 
 export default {
 	title: "Pages / Profile / Create Profile",
