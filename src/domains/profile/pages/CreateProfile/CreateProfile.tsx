@@ -55,28 +55,38 @@ const CreateProfile = injectIntl(({ intl: { formatMessage } }: Props) => {
 
 					<div className="mx-4 mt-5 md:mx-8 xl:mx-16">
 						<Button color="primary" variant="solid" className="w-full">
-							Login with MarketSquare
+							<div className="flex items-center justify-center">
+								<span>Login with MarketSquare</span>
+							</div>
 						</Button>
 						<div className="pt-4 mt-8 border-t border-theme-neutral-light"></div>
 					</div>
 				</div>
-			</div>
 
-			<div className="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">
-				<div className="mb-4">
-					<div className="flex flex-1">
-						<div className="w-full">
-							<ListDivided items={[item]} />
-							<Form handleOnSubmit={submitProfile}>
-								<Input
-									type="text"
-									label="Name"
-									name="name"
-									ref={register({ required: true })}
-									error={errors["name"]}
-								/>
-							</Form>
+				<div className="mx-auto my-5 md:w-3/4 lg:w-3/5 xl:w-1/2">
+					<div className="mx-4 md:mx-8 xl:mx-16 mb-4 pb-5 border-b border-dashed border-theme-neutral-light">
+						<div className="flex flex-1">
+							<div className="w-full">
+								<ListDivided items={[item]} />
+								<Form handleOnSubmit={submitProfile}>
+									<Input
+										type="text"
+										label="Name"
+										name="name"
+										ref={register({ required: true })}
+										error={errors["name"]}
+									/>
+								</Form>
+							</div>
 						</div>
+					</div>
+					<div className="mx-4 md:mx-8 xl:mx-16">
+						<Button color="primary" variant="plain">
+							Back
+						</Button>
+						<Button color="primary" variant="solid" className="ml-2">
+							Complete
+						</Button>
 					</div>
 				</div>
 			</div>
