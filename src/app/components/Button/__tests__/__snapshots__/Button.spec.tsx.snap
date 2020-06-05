@@ -3,7 +3,7 @@
 exports[`Button should render 1`] = `
 <div>
   <button
-    class="sc-AxjAm caaigW"
+    class="sc-AxjAm kujxw"
     color="primary"
   />
 </div>

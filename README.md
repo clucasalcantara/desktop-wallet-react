@@ -108,7 +108,7 @@ yarn build:wind
 yarn test
 
 # Run unit tests and generate and display the coverage report
-yarn test --coverage
+yarn test:coverage
 ```
 
 </details>

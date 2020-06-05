@@ -42,8 +42,11 @@
 		"storybook": "start-storybook -p 5000",
 		"start": "react-app-rewired start",
 		"test": "react-app-rewired test",
+		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
 		"eject": "react-app-rewired eject",
-		"build:mac": "yarn build && electron-builder --mac --publish never"
+		"build:mac": "yarn build && electron-builder --mac --publish never",
+		"build:linux": "yarn build && electron-builder --linux --publish never",
+		"build:win": "yarn build && electron-builder --win --x64 --ia32 --publish never"
 	},
 	"babelMacros": {
 		"twin": {
@@ -175,6 +178,23 @@
 			"perMachine": true,
 			"oneClick": false,
 			"allowToChangeInstallationDirectory": true
+		}
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"src/**/*.{js,jsx,ts,tsx}",
+			"!src/resources/",
+			"!src/i18n/",
+			"!<rootDir>/build/",
+			"!<rootDir>/dist/"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 100,
+				"functions": 100,
+				"lines": 100,
+				"statements": 100
+			}
 		}
 	}
 }

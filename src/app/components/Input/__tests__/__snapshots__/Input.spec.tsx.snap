@@ -15,7 +15,7 @@ exports[`Input should render an input 1`] = `
         class="mt-2 pb-2 flex relative items-center"
       >
         <input
-          class="flex-1 border border-theme-neutral-light rounded-md h-12 w-full"
+          class="form-input transition-colors duration-200 w-full"
           name="input"
           type="text"
         />
@@ -40,7 +40,7 @@ exports[`Input should render an input with an error 1`] = `
         class="mt-2 pb-2 flex relative items-center"
       >
         <input
-          class="flex-1 border border-theme-neutral-light rounded-md h-12 w-full"
+          class="form-input transition-colors duration-200 w-full"
           name="input"
           type="text"
         />
@@ -71,7 +71,7 @@ exports[`Input should render an input with configured inner slot 1`] = `
         class="mt-2 pb-2 flex relative items-center"
       >
         <input
-          class="flex-1 border border-theme-neutral-light rounded-md h-12 w-full"
+          class="form-input transition-colors duration-200 w-full"
           name="input"
           type="text"
         />
@@ -104,7 +104,7 @@ exports[`Input should render an input with configured label 1`] = `
         class="mt-2 pb-2 flex relative items-center"
       >
         <input
-          class="flex-1 border border-theme-neutral-light rounded-md h-12 w-full"
+          class="form-input transition-colors duration-200 w-full"
           name="input"
           type="text"
         />

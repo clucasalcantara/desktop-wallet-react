@@ -52,6 +52,7 @@ exports[`ListDivided should render an list divided with items 1`] = `
             class="relative w-24 h-24 bg-theme-neutral rounded"
           >
             <img
+              alt="random avatar"
               class="object-cover rounded"
               src="https://randomuser.me/api/portraits/men/3.jpg"
             />
