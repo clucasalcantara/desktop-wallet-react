@@ -69,7 +69,7 @@ export const TabList = styled.div`
 type TabPanelProps = {
 	children: React.ReactNode;
 	tabId: string | number;
-	overrideActiveIndex: string | number;
+	overrideActiveIndex?: string | number;
 };
 
 export const TabPanel = React.forwardRef<HTMLDivElement, TabProps>((props: TabPanelProps, ref) => {
