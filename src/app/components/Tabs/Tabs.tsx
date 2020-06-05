@@ -27,6 +27,7 @@ export function Tabs({ children, initialId, onChange }: TabsProps) {
 type TabProps = {
 	children: React.ReactNode;
 	tabId: string | number;
+	overrideActiveIndex?: string | number;
 };
 
 const TabButton = styled.button``;

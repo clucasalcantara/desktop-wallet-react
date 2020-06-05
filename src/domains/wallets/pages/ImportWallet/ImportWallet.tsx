@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 // UI Elements
 import { Button } from "../../../../app/components/Button";
-import { CardControl, CardControlState } from "../../../../app/components/Card";
+import { CardControl } from "../../../../app/components/Card";
 import { StepIndicator } from "../../../../app/components/StepIndicator";
+import { SvgIcon } from "../../../../app/components/SvgIcon";
 import { Tabs, TabPanel } from "../../../../app/components/Tabs";
 
 type Props = {
-	networks: array;
+	networks: any;
+};
+
+type NetworkProps = {
+	id: number;
+	icon: string;
+	name: string;
 };
 
 const ImportWallet = ({ networks }: Props) => {
@@ -19,24 +26,26 @@ const ImportWallet = ({ networks }: Props) => {
 				<div className="flex justify-center w-full">
 					<div className="w-2/4">
 						<StepIndicator size={2} activeIndex={activeIndex} />
-						<div className="mt-10 ImportWallet__content">
-							<div className="ImportWallet__content_header">
-								<p className="text-4xl font-bold ImportWallet__header__title">Network for import</p>
-								<p className="ImportWallet__header__subtitle text-medium">
-									Select the network where you want to import your wallet
-								</p>
+						<div className="mt-10">
+							<div>
+								<p className="text-4xl font-bold">Network for import</p>
+								<p className="text-medium">Select the network where you want to import your wallet</p>
 							</div>
 							{networks && (
-								<div className="mt-5 ImportWallet__networks">
-									{networks.map((network) => (
+								<div className="mt-5">
+									{networks.map((network: any) => (
 										<div className="mb-3" key={network.id}>
 											<CardControl
 												checked={network.id === selected}
 												onChange={() => setSelected(network.id)}
 											>
-												<div className="flex flex-row h-full justify-between items-center p-3">
+												<div className="flex flex-row h-full items-center py-3">
+													{network.icon && (
+														<div className="rounded-full border border-theme-primary-contrast w-12 h-12 flex justify-center items-center mr-3">
+															<SvgIcon name={network.icon} height={25} width={25} />
+														</div>
+													)}
 													<span>{network.name}</span>
-													{/* <CardControlState /> */}
 												</div>
 											</CardControl>
 										</div>
@@ -57,27 +66,25 @@ const ImportWallet = ({ networks }: Props) => {
 				<div className="flex justify-center w-full">
 					<div className="w-2/4">
 						<StepIndicator size={2} activeIndex={activeIndex} />
-						<div className="mt-10 ImportWallet__content">
-							<div className="ImportWallet__content_header">
-								<p className="text-4xl font-bold ImportWallet__header__title">Import Wallet</p>
-								<p className="ImportWallet__header__subtitle text-medium">
+						<div className="mt-10 ">
+							<div className="_header">
+								<p className="text-4xl font-bold">Import Wallet</p>
+								<p className="text-medium">
 									Enter your wallet password in order to get full access to your money. Or you can
 									choose an address for vieweing only.
 								</p>
 							</div>
-							<div className="flex flex-row items-center justify-between mt-8 ImportWallet__content_address--toggle">
+							<div className="flex flex-row items-center justify-between mt-8 _address--toggle">
 								<div>
 									<p className="text-xl font-bold">Use the address only</p>
-									<p className="text-sm ImportWallet__header__subtitle">
-										You can only view your wallet but not send money.
-									</p>
+									<p className="text-sm">You can only view your wallet but not send money.</p>
 								</div>
 								{/* <Toggle v-model="form.addressOnly" :checked="form.addressOnly" /> */}
 							</div>
-							<div v-if="form.addressOnly" className="mt-8 ImportWallet__content_address--input">
+							<div v-if="form.addressOnly" className="mt-8 _address--input">
 								{/* <Input type="text" :model="form.address" label="Address" icon="qrcode" /> */}
 							</div>
-							<div v-if="!form.addressOnly" className="mt-8 ImportWallet__content_password--input">
+							<div v-if="!form.addressOnly" className="mt-8 _password--input">
 								{/* <Input type="text" :model="form.password" label="Your password" icon="qrcode" /> */}
 							</div>
 						</div>
