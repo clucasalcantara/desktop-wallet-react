@@ -1,7 +1,10 @@
 import React from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
+import { useForm } from "react-hook-form";
 // UI Elements
 import { Button } from "../../../../app/components/Button";
+import { Input } from "../../../../app/components/Input";
+import { Form } from "../../../../app/components/Form";
 import { NavBar } from "../../../../app/components/NavBar";
 import { ListDivided } from "../../../../app/components/ListDivided";
 import { SvgIcon } from "../../../../app/components/SvgIcon";
@@ -36,6 +39,9 @@ const item = {
 };
 
 const CreateProfile = ({ intl: { formatMessage } }: Props) => {
+	const submitProfile = (data: any) => console.log(data);
+	const { register, errors } = useForm();
+
 	return (
 		<div className="w-full h-full">
 			<NavBar />
@@ -61,6 +67,15 @@ const CreateProfile = ({ intl: { formatMessage } }: Props) => {
 					<div className="flex flex-1">
 						<div className="w-full">
 							<ListDivided items={[item]} />
+							<Form handleOnSubmit={submitProfile}>
+								<Input
+									type="text"
+									label="Name"
+									name="name"
+									ref={register({ required: true })}
+									error={errors["name"]}
+								/>
+							</Form>
 						</div>
 					</div>
 				</div>
