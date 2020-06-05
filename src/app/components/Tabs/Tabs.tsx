@@ -1,5 +1,5 @@
 import React from "react";
-import tw, {styled} from "twin.macro";
+import tw, { styled } from "twin.macro";
 import { TabContext, useTab, TabId } from "./useTab";
 
 type TabsProps = {
@@ -32,8 +32,8 @@ type TabProps = {
 const TabButton = styled.button``;
 
 export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProps, ref) => {
-    const context = React.useContext(TabContext);
-    const isActive = context?.isIdActive(props.tabId);
+	const context = React.useContext(TabContext);
+	const isActive = context?.isIdActive(props.tabId);
 
 	return (
 		<TabButton ref={ref} aria-selected={isActive} onClick={() => context?.setCurrentId(props.tabId)}>
@@ -69,18 +69,18 @@ export const TabList = styled.div`
 type TabPanelProps = {
 	children: React.ReactNode;
 	tabId: string | number;
+	overrideActiveIndex: string | number;
 };
 
 export const TabPanel = React.forwardRef<HTMLDivElement, TabProps>((props: TabPanelProps, ref) => {
-    const context = React.useContext(TabContext);
-    const isActive = context?.isIdActive(props.tabId);
+	const context = React.useContext(TabContext);
+	const overrideIndexIsActive = props.overrideActiveIndex === props.tabId;
+	const isActive = props.overrideActiveIndex ? overrideIndexIsActive : context?.isIdActive(props.tabId);
 
-    if (!isActive) {
-        return <></>
-    }
+	if (!isActive) {
+		return <></>;
+	}
 
-	return (
-        <div ref={ref}>{props.children}</div>
-	);
+	return <div ref={ref}>{props.children}</div>;
 });
 TabPanel.displayName = "TabPanel";
