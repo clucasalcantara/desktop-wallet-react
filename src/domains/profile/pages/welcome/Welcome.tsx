@@ -21,7 +21,7 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: Props) => {
 			<div className="flex flex-col items-center justify-center text-center">
 				<h1 className="mb-8 text-4xl font-bold">{formatMessage({ id: "COMMON_WELCOME" })}</h1>
 				<div className="container w-3/5 mx-auto">
-					<img src={profileAssets.OnboardingBanner} />
+					<img src={profileAssets.OnboardingBanner} alt="Onboarding Banner" />
 				</div>
 
 				{profiles.length > 0 && (

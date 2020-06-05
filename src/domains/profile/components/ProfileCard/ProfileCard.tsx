@@ -18,7 +18,7 @@ export const ProfileCard = ({ avatar, name, balance }: Props) => (
 			<div className="flex flex-row justify-between w-full">
 				<div className="flex items-center">
 					<div className="block w-12 h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0">
-						<img className="rounded-full" src={avatar} />
+						<img className="rounded-full" src={avatar} alt="User Avatar" />
 					</div>
 					<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
 						<p className="text-sm font-semibold text-theme-neutral">Name</p>

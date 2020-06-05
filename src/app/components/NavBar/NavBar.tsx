@@ -10,7 +10,7 @@ export const NavBar = () => (
 			<div className="relative flex justify-between h-20 md:h-24">
 				<div className="flex-shrink-0 flex items-center">
 					<div className="flex rounded-lg p-2 bg-logo">
-						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" />
+						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
 					</div>
 				</div>
 			</div>
