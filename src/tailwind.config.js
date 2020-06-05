@@ -3,28 +3,8 @@
 const defaultConfig = require("tailwindcss/defaultConfig");
 const tailwindUI = require("@tailwindcss/ui");
 
-const alphaThemePlugin = () => {
-	const variants = ["primary", "success", "danger", "warning", "neutral"];
-	const props = ["bg", "text", "border"];
-	const attrs = ["background-color", "color", "border-color"];
-
-	return variants.reduce((result, variant) => {
-		const value = props.reduce((acc, prop, index) => {
-			const key = `.${prop}-theme-${variant}-alpha`;
-			const data = {
-				[`${attrs[index]}`]: `rgba(var(--theme-color-${variant}-rgb), var(--${prop}-opacity))`,
-			};
-
-			return {
-				...acc,
-				[key]: data,
-			};
-		}, {});
-		return { ...result, ...value };
-	}, {});
-};
-
 module.exports = {
+	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.tsx?"],
 	theme: {
 		colors: {
 			logo: "#c9292c",
@@ -88,7 +68,7 @@ module.exports = {
 			"theme-danger-700": "var(--theme-color-danger-700)",
 			"theme-danger-800": "var(--theme-color-danger-800)",
 			"theme-danger-900": "var(--theme-color-danger-900)",
-			
+
 			"theme-neutral": "var(--theme-color-neutral)",
 			"theme-neutral-contrast": "var(--theme-color-neutral-contrast)",
 			"theme-neutral-dark": "var(--theme-color-neutral-dark)",
@@ -176,21 +156,59 @@ module.exports = {
 			fontFamily: {
 				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
 			},
+			borderColor: (theme) => ({
+				default: theme("colors.theme-neutral-light"),
+			}),
+			boxShadow: {
+				xs: "0 0 0 1px var(--theme-color-neutral-300)",
+				sm: "0 1px 2px var(--theme-color-neutral-300)",
+				default: "0 1px 3px 0 var(--theme-color-neutral-200), 0 1px 2px 0 var(--theme-color-neutral-100)",
+				md: "0 4px 6px -1px var(--theme-color-neutral-200), 0 2px 4px -1px var(--theme-color-neutral-100)",
+				lg: "0 10px 15px -3px var(--theme-color-neutral-200), 0 4px 6px -2px 0 2px 4px -1px var(--theme-color-neutral-100)",
+				outline: "0 0 0 3px rgba(var(--theme-color-primary-rgb), 0.4)",
+			},
 		},
 
 		customForms: (theme) => ({
 			default: {
+				input: {
+					textColor: theme("colors.theme-neutral-900"),
+					backgroundColor: theme("colors.theme-background"),
+					paddingTop: theme("spacing.3"),
+					paddingBottom: theme("spacing.3"),
+					paddingLeft: theme("spacing.3"),
+					paddingRight: theme("spacing.3"),
+					"&::placeholder": {
+						color: theme("colors.theme-neutral-light"),
+						opacity: "1",
+					},
+					"&:not(:disabled):focus": {
+						outline: "none",
+						boxShadow: theme("boxShadow.sm"),
+						borderColor: theme("colors.theme-primary"),
+					},
+					"&:not(:disabled):hover": {
+						borderColor: theme("colors.theme-primary"),
+					},
+				},
 				select: {
+					backgroundColor: theme("colors.theme-background"),
+					paddingTop: theme("spacing.3"),
+					paddingBottom: theme("spacing.3"),
+					paddingLeft: theme("spacing.4"),
 					icon: (iconColor) => `
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 16 15">
-                    		<path fill="${iconColor}" d="M3.9 5.4L.7 1.9C.4 1.6.4 1.1.7.8s.7-.3 1 0l2.8 2.9L7.2.8c.3-.3.7-.3 1 0s.3.8 0 1.1L5 5.4c-.3.3-.7.3-1.1 0h0z"/>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="${iconColor}" viewBox="0 0 20 20">
+							<path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
 						</svg>
 					`,
-
-					iconColor: theme("colors.theme-medium"),
-
-					"&:hover": {
-						iconColor: theme("colors.theme-medium-light"),
+					iconColor: "#3c4249",
+					"&:not(:disabled):focus": {
+						outline: "none",
+						boxShadow: theme("boxShadow.sm"),
+						borderColor: theme("colors.theme-primary"),
+					},
+					"&:not(:disabled):hover": {
+						borderColor: theme("colors.theme-primary"),
 					},
 				},
 			},
@@ -200,5 +218,5 @@ module.exports = {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
 		borderWidth: [...defaultConfig.variants.borderWidth, "last"],
 	},
-	plugins: [tailwindUI, ({ addUtilities }) => addUtilities(alphaThemePlugin())],
+	plugins: [tailwindUI],
 };

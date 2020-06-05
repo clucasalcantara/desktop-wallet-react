@@ -20,7 +20,7 @@ export const TextWithError = () => (
 
 export const TextWithIcon = () => {
 	const innerSlot = (
-		<button className="text-theme-neutral-600">
+		<button className="text-theme-neutral-600 w-full">
 			<SvgIcon name="qrcode" />
 		</button>
 	);
