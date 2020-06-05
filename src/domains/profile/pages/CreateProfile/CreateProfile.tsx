@@ -1,15 +1,12 @@
 import React from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
-//TODO: Deal with relative paths
-import { imagesConfig } from "../../../../resources/assets/images";
 // UI Elements
 import { Button } from "../../../../app/components/Button";
+import { NavBar } from "../../../../app/components/NavBar";
 import { ListDivided } from "../../../../app/components/ListDivided";
 import { SvgIcon } from "../../../../app/components/SvgIcon";
 
 type Props = {} & WrappedComponentProps;
-
-const commonAssets = imagesConfig.common;
 
 const item = {
 	isFloatingLabel: true,
@@ -41,13 +38,7 @@ const item = {
 const CreateProfile = ({ intl: { formatMessage } }: Props) => {
 	return (
 		<div className="w-full h-full">
-			<div className="px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center h-20 md:h-24">
-					<div className="flex p-2 rounded-lg bg-logo">
-						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" />
-					</div>
-				</div>
-			</div>
+			<NavBar />
 
 			<div className="container mx-auto">
 				<div className="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">

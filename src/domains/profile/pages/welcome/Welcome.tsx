@@ -4,6 +4,7 @@ import { injectIntl, WrappedComponentProps } from "react-intl";
 import { imagesConfig } from "../../../../resources/assets/images";
 // UI Elements
 import { Button } from "../../../../app/components/Button";
+import { NavBar } from "../../../../app/components/NavBar";
 import { ProfileCard } from "../../components/ProfileCard";
 
 type Props = {
@@ -11,18 +12,11 @@ type Props = {
 } & WrappedComponentProps;
 
 const profileAssets = imagesConfig.pages.profile;
-const commonAssets = imagesConfig.common;
 
 const Welcome = ({ intl: { formatMessage }, profiles }: Props) => {
 	return (
 		<div className="w-full h-full">
-			<div className="px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center h-20 md:h-24">
-					<div className="flex p-2 rounded-lg bg-logo">
-						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" />
-					</div>
-				</div>
-			</div>
+			<NavBar />
 
 			<div className="flex flex-col items-center justify-center text-center">
 				<h1 className="mb-8 text-4xl font-bold">{formatMessage({ id: "COMMON_WELCOME" })}</h1>
