@@ -1,44 +1,126 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ARK Desktop Wallet
 
-## Available Scripts
+![Ark Desktop Wallet](./banner.png)
 
-In the project directory, you can run:
+[![Build Status](https://badgen.now.sh/github/status/ArkEcosystem/desktop-wallet)](https://github.com/ArkEcosystem/desktop-wallet/actions?query=branch%3Adevelop)
+[![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/desktop-wallet)](https://github.com/ArkEcosystem/desktop-wallet/releases)
+[![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
-### `yarn start`
+> Lead Maintainer: [Alex Barnsley](https://github.com/alexbarnsley)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Download
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases/latest)
 
-### `yarn test`
+## Installing via Package Managers
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Arch Linux
 
-### `yarn build`
+Install via [AUR](https://aur.archlinux.org/packages/ark-desktop):
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Manjaro
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```shell
+pamac build ark-desktop
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Mac OS X
 
-### `yarn eject`
+Install via [Homebrew](https://brew.sh/):
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell
+brew cask install ark-desktop-wallet
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Translations
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Translations are no longer accepted for the Desktop Wallet. We are using plugins to provide languages.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Development
 
-## Learn More
+### Requirements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Ubuntu
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In Ubuntu the development files of `libudev` are necessary:
+
+```
+sudo apt-get install libudev-dev libusb-1.0-0-dev
+```
+
+#### Windows
+
+-   Python 2.7
+-   Visual Studio 2017
+
+#### Node 12
+
+To download, head over to [here](https://nodejs.org/en/) and download Node 12.
+
+If you already have npm installed, you can run
+
+```
+npm install -g n
+sudo n 12
+```
+
+#### Yarn
+
+Install the Yarn dependency manager
+
+```
+npm install -g yarn
+```
+
+### Commands
+
+<details><summary>List of commands</summary>
+
+```bash
+# Install dependencies
+yarn install
+
+# Execute the electron application. Making changes in the code, updates the application (hot reloading).
+yarn dev
+
+# Execute the browser version application. Making changes in the code, updates the application (hot reloading) good for designing :3.
+yarn start
+
+# Runs linter over the files
+yarn lint
+
+# Try to automatically fix lint errors
+yarn lint:fix
+
+# Builds the production code for the react application
+yarn build
+
+# Build and electron application for production (Mac)
+yarn build:mac
+
+# Build and electron application for production (Linux)
+yarn build:linux
+
+# Build electron application for production (Windows - x32 and x64)
+yarn build:wind
+
+# Run the default test switch in default watch mode
+yarn test
+
+# Run unit tests and generate and display the coverage report
+yarn test --coverage
+```
+
+</details>
+
+## Security
+
+If you discover a security vulnerability within this package, please send an e-mail to security@ark.io. All security vulnerabilities will be promptly addressed.
+
+## Credits
+
+This project exists thanks to all the people who [contribute](../../contributors).
+
+## License
+
+[MIT](LICENSE) © [ARK Ecosystem](https://ark.io)
